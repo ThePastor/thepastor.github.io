@@ -27,7 +27,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"JohnsonXCorp","url":"https://thepastor.github.io/","email":"johnsonxcorp@outlook.com","logo":"https://thepastor.github.io/apple-touch-icon.png","address":{"@type":"PostalAddress","addressLocality":"Kamloops","addressRegion":"BC","addressCountry":"CA"},"sameAs":["https://github.com/ThePastor"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"JohnsonXCorp","url":"https://thepastor.github.io/","email":"johnsonxcorp@outlook.com","telephone":"+1-250-879-5043","logo":"https://thepastor.github.io/apple-touch-icon.png","address":{"@type":"PostalAddress","addressLocality":"Kamloops","addressRegion":"BC","addressCountry":"CA"},"sameAs":["https://github.com/ThePastor"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -144,8 +144,8 @@ h2{font-family:var(--display);font-weight:700;font-size:clamp(30px,4vw,42px);let
 
 /* principles */
 .prin{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--rule);border-radius:14px;overflow:hidden}
-.prin div{padding:26px 22px;border-right:1px solid var(--rule);background:var(--surface)}
-.prin div:last-child{border-right:0}
+.prin > div{padding:26px 22px;border-right:1px solid var(--rule);background:var(--surface)}
+.prin > div:last-child{border-right:0}
 .prin .k{font-family:var(--mono);font-size:12px;color:var(--gold-text);letter-spacing:.04em}
 .prin h4{font-family:var(--display);font-size:19px;font-weight:600;margin:10px 0 8px;letter-spacing:-.01em}
 .prin p{color:var(--muted);font-size:15px;margin:0}
@@ -159,10 +159,13 @@ h2{font-family:var(--display);font-weight:700;font-size:clamp(30px,4vw,42px);let
 .contact p{color:var(--muted);font-size:15.5px;margin:0 0 18px}
 .line{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--rule)}
 .line .lbl{font-family:var(--mono);font-size:11.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.06em;display:block}
-.line .val{font-weight:600;word-break:break-all;user-select:all}
+.line .val{font-weight:600;overflow-wrap:anywhere;user-select:all}
 .copy{font-family:var(--mono);font-size:12px;border:1px solid var(--rule);background:transparent;color:var(--ink);border-radius:6px;padding:6px 10px;cursor:pointer;white-space:nowrap}
 .copy:hover{background:var(--raise)}
 
+.studio-band{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;padding:32px;border-radius:16px;border:1px solid var(--gold);background:color-mix(in srgb,var(--gold) 8%,var(--surface));text-decoration:none;color:inherit}
+.studio-band p{color:var(--muted);max-width:56ch;margin:12px 0 0}
+.studio-band:hover .btn{transform:translateY(-1px)}
 footer.foot{border-top:1px solid var(--rule);padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:var(--faint);font-size:13.5px}
 footer.foot .wm{color:var(--ink);font-size:16px}
 
@@ -171,8 +174,8 @@ footer.foot .wm{color:var(--ink);font-size:16px}
   .proj{grid-template-columns:minmax(0,1fr);gap:24px;padding:20px}
   .proj:nth-child(even) .shot{order:0}
   .prin{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .prin div:nth-child(2){border-right:0}
-  .prin div:nth-child(-n+2){border-bottom:1px solid var(--rule)}
+  .prin > div:nth-child(2){border-right:0}
+  .prin > div:nth-child(-n+2){border-bottom:1px solid var(--rule)}
   .about{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:640px){
@@ -181,8 +184,8 @@ footer.foot .wm{color:var(--ink);font-size:16px}
   header.bar nav{display:none}
   .lab-grid{grid-template-columns:minmax(0,1fr)}
   .prin{grid-template-columns:minmax(0,1fr)}
-  .prin div{border-right:0;border-bottom:1px solid var(--rule)}
-  .prin div:last-child{border-bottom:0}
+  .prin > div{border-right:0;border-bottom:1px solid var(--rule)}
+  .prin > div:last-child{border-bottom:0}
   .proj h3{font-size:27px}
   section.block{padding-block:56px}
 }
@@ -197,6 +200,7 @@ footer.foot .wm{color:var(--ink);font-size:16px}
       <a href="#work">Work</a>
       <a href="#lab">In the lab</a>
       <a href="#approach">Approach</a>
+      <a href="studio/">Studio</a>
       <a href="#contact">Contact</a>
     </nav>
     <a class="btn ghost" href="#contact">Get in touch</a>
@@ -211,7 +215,7 @@ footer.foot .wm{color:var(--ink);font-size:16px}
       <p class="lede">JohnsonXCorp builds focused web apps for reading, studying, learning languages and planning a term. They open in any browser, install like a phone app, and keep what you put in them private.</p>
       <div class="cta">
         <a class="btn primary" href="#work">See the work →</a>
-        <a class="btn ghost" href="#contact">Work with us</a>
+        <a class="btn ghost" href="studio/">Need a website? →</a>
       </div>
     </div>
 
@@ -364,6 +368,17 @@ footer.foot .wm{color:var(--ink);font-size:16px}
     </div>
   </section>
 
+  <section class="block" id="studio">
+    <a class="studio-band" href="studio/">
+      <div>
+        <div class="eyebrow">JohnsonX Studio</div>
+        <h2>Need a website for your business?</h2>
+        <p>JohnsonX Studio is the web design side of JohnsonXCorp. It builds fast, modern sites for small businesses, and you see your new homepage free before you pay anything.</p>
+      </div>
+      <span class="btn primary">See templates &amp; pricing →</span>
+    </a>
+  </section>
+
   <section class="block" id="contact">
     <div class="about">
       <div>
@@ -378,6 +393,10 @@ footer.foot .wm{color:var(--ink);font-size:16px}
         <div class="line">
           <div><span class="lbl">Email</span><span class="val" id="email">johnsonxcorp@outlook.com</span></div>
           <button class="copy" type="button" id="copy-email">Copy</button>
+        </div>
+        <div class="line">
+          <div><span class="lbl">Call or text</span><a class="val" href="tel:+12508795043">250-879-5043</a></div>
+          <button class="copy" type="button" id="copy-phone">Copy</button>
         </div>
         <div class="line">
           <div><span class="lbl">GitHub</span><a class="val" href="https://github.com/ThePastor" target="_blank" rel="noopener">github.com/ThePastor</a></div>
@@ -407,6 +426,7 @@ footer.foot .wm{color:var(--ink);font-size:16px}
       cards.forEach(function(card){card.hidden=!(f==='all'||card.getAttribute('data-cat')===f);});
     });
   });
+  var pb=document.getElementById('copy-phone');pb.addEventListener('click',function(){try{navigator.clipboard.writeText('250-879-5043').then(function(){pb.textContent='Copied';setTimeout(function(){pb.textContent='Copy';},1600);},function(){});}catch(e){}});
   var btn=document.getElementById('copy-email');
   btn.addEventListener('click',function(){
     var t=document.getElementById('email').textContent;

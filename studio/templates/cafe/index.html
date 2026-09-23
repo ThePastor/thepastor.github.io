@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Copperleaf Café — sample café website · JohnsonX Studio</title>
+<meta name="description" content="A sample café website template by JohnsonX Studio. The business shown is fictional.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#F6F1E4;--paper:#FFFCF4;--ink:#1F2A22;--muted:#5B665D;--green:#234A36;--butter:#F2C94C;--rule:#E3DAC4;
+--serif:"Young Serif",Georgia,serif;--sans:"Work Sans",system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 var(--sans)}
+a{color:inherit}.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding-block:20px}
+.logo{font-family:var(--serif);font-size:24px;text-decoration:none}
+.logo span{color:var(--green)}
+nav{display:flex;gap:22px;font-weight:500}nav a{text-decoration:none}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:40px 64px}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,6vw,68px);line-height:1.03;margin:0 0 18px;letter-spacing:-.01em}
+.hero p{font-size:19px;color:var(--muted);max-width:44ch;margin:0 0 26px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:13px 20px;border-radius:999px;font-weight:600;text-decoration:none}
+.btn.a{background:var(--green);color:#FFFCF4}.btn.b{border:1.5px solid var(--green);color:var(--green)}
+.art{aspect-ratio:1;max-width:100%;border-radius:50% 50% 24px 24px;background:var(--green);position:relative;overflow:hidden}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
+.open{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;background:var(--butter);padding:6px 12px;border-radius:999px;margin-bottom:18px}
+.open i{width:8px;height:8px;border-radius:50%;background:#1d7a3a;display:block}
+section{padding-block:64px;border-top:1px solid var(--rule)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,42px);margin:0 0 8px}
+.lede{color:var(--muted);margin:0 0 30px}
+.menu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.menu h3{font-family:var(--serif);font-weight:400;font-size:22px;margin:0 0 12px;color:var(--green)}
+.item{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed var(--rule)}
+.item small{display:block;color:var(--muted);font-size:13.5px}
+.item b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:18px;padding:26px}
+.hours div{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--rule)}
+.hours div:last-child{border:0}
+.ph{border:2px dashed var(--rule);border-radius:14px;padding:22px;color:var(--muted);text-align:center;font-size:15px}
+footer{padding-block:34px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;border-top:1px solid var(--rule)}
+@media(max-width:820px){.hero,.two{grid-template-columns:1fr}.menu{grid-template-columns:1fr}nav{display:none}.art{max-width:420px}}
+</style>
+</head>
+<body>
+<div class="jx-sample" role="note">
+  <span><b>Sample website</b> by JohnsonX Studio. The business shown is fictional.</span>
+  <a href="../../#contact">Get one like this →</a>
+</div>
+<style>
+.jx-sample{position:sticky;top:0;z-index:50;display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;align-items:center;padding:9px 16px;background:#0D0F13;color:#EEEFF2;font:500 13.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;text-align:center}
+.jx-sample b{color:#EBB64E;font-weight:600}
+.jx-sample a{color:#0D0F13;background:#EBB64E;text-decoration:none;padding:4px 10px;border-radius:6px;font-weight:600}
+</style>
+
+<div class="wrap">
+<header><a class="logo" href="#">Copperleaf <span>Café</span></a>
+<nav><a href="#menu">Menu</a><a href="#visit">Visit</a><a href="#about">About</a></nav></header>
+
+<div class="hero">
+  <div>
+    <div class="open"><i></i> Open today · 7 am – 4 pm</div>
+    <h1>Slow coffee, warm bakes, a seat by the window.</h1>
+    <p>Small-batch espresso, soups made that morning, and pastries out of the oven by 7. Stay a while or grab it to go.</p>
+    <div class="btns"><a class="btn a" href="#menu">See the menu</a><a class="btn b" href="#visit">Get directions</a></div>
+  </div>
+  <div class="art" aria-hidden="true">
+    <svg viewBox="0 0 400 400"><circle cx="200" cy="232" r="118" fill="#F2C94C"/><rect x="118" y="196" width="164" height="112" rx="22" fill="#FFFCF4"/><path d="M282 214h22a28 28 0 0 1 0 56h-22" fill="none" stroke="#FFFCF4" stroke-width="16"/><path d="M165 170c-10-18 10-28 0-46M200 170c-10-18 10-28 0-46M235 170c-10-18 10-28 0-46" fill="none" stroke="#F6F1E4" stroke-width="7" stroke-linecap="round" opacity=".7"/><ellipse cx="200" cy="318" rx="118" ry="14" fill="#1a3a2a"/></svg>
+  </div>
+</div>
+
+<section id="menu">
+  <h2>Menu</h2><p class="lede">Prices include the good stuff. Oat and almond milk at no extra cost.</p>
+  <div class="menu">
+    <div><h3>Coffee</h3>
+      <div class="item"><span>Espresso<small>Double shot, house blend</small></span><b>$3.25</b></div>
+      <div class="item"><span>Flat white</span><b>$4.75</b></div>
+      <div class="item"><span>Oat latte</span><b>$5.25</b></div>
+      <div class="item"><span>Pour-over<small>Rotating single origin</small></span><b>$5.00</b></div></div>
+    <div><h3>Bakery</h3>
+      <div class="item"><span>Butter croissant</span><b>$3.75</b></div>
+      <div class="item"><span>Morning glory muffin</span><b>$3.50</b></div>
+      <div class="item"><span>Cardamom bun</span><b>$4.25</b></div>
+      <div class="item"><span>Gluten-free brownie</span><b>$4.00</b></div></div>
+    <div><h3>Lunch</h3>
+      <div class="item"><span>Soup of the day<small>With sourdough</small></span><b>$9.50</b></div>
+      <div class="item"><span>Roast veg sandwich</span><b>$12.00</b></div>
+      <div class="item"><span>Turkey &amp; brie melt</span><b>$13.50</b></div>
+      <div class="item"><span>Harvest bowl</span><b>$14.00</b></div></div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="two">
+    <div class="card"><h2 style="font-size:30px">Hours</h2>
+      <div class="hours"><div><span>Mon – Fri</span><b>7 am – 4 pm</b></div><div><span>Saturday</span><b>8 am – 4 pm</b></div><div><span>Sunday</span><b>9 am – 2 pm</b></div></div></div>
+    <div class="card"><h2 style="font-size:30px">Find us</h2>
+      <p style="margin:0 0 10px">123 Sample Street<br>Kamloops, BC</p>
+      <p style="margin:0 0 18px">250-555-0142 · hello@copperleaf.example</p>
+      <a class="btn a" href="#">Open in Google Maps</a></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="two">
+    <div><h2>A neighbourhood café</h2><p class="lede" style="margin:0">This is where the owner's story goes: how it started, who's behind the counter, where the beans come from. Real photos of the space and the team go here too.</p></div>
+    <div class="ph">Your Google reviews and Instagram photos can appear here, pulled in live.</div>
+  </div>
+</section>
+
+<footer><span>© 2026 Copperleaf Café (sample)</span><span>Website by JohnsonX Studio</span></footer>
+</div>
+</body>
+</html>
