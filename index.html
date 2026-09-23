@@ -1,0 +1,420 @@
+<!doctype html>
+<!--
+  JohnsonXCorp — studio website
+  Copyright (c) 2026 JohnsonXCorp. All rights reserved.
+  This page's design, code and copy are proprietary. Viewing the source does not grant a licence
+  to copy, reuse or redistribute any part of it. See LICENSE. Enquiries: johnsonxcorp@outlook.com
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JohnsonXCorp — independent software studio, Kamloops BC</title>
+<meta name="description" content="JohnsonXCorp is an independent software studio in Kamloops, BC, building small, well-made apps for reading, studying, languages and planning.">
+<link rel="canonical" href="https://thepastor.github.io/">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0D0F13" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F4F4F1" media="(prefers-color-scheme: light)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JohnsonXCorp">
+<meta property="og:title" content="JohnsonXCorp — small apps, engineered to be used every day">
+<meta property="og:description" content="JohnsonXCorp is an independent software studio in Kamloops, BC, building small, well-made apps for reading, studying, languages and planning.">
+<meta property="og:url" content="https://thepastor.github.io/">
+<meta property="og:image" content="https://thepastor.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"JohnsonXCorp","url":"https://thepastor.github.io/","email":"johnsonxcorp@outlook.com","logo":"https://thepastor.github.io/apple-touch-icon.png","address":{"@type":"PostalAddress","addressLocality":"Kamloops","addressRegion":"BC","addressCountry":"CA"},"sameAs":["https://github.com/ThePastor"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:dark;
+  --ground:#0D0F13; --surface:#14171D; --raise:#1B1F27; --ink:#EEEFF2; --muted:#9AA1AD; --faint:#646B78; --rule:#252A34;
+  --gold:#EBB64E; --gold-text:#EBB64E; --on-gold:#17120A; --live:#5BC48A; --lab:#8E9BFF;
+  --shadow:0 24px 60px -30px rgba(0,0,0,.8);
+  --display:"Outfit","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    color-scheme:light;
+    --ground:#F4F4F1; --surface:#FFFFFF; --raise:#EFEEE9; --ink:#14161B; --muted:#545B67; --faint:#8A909B; --rule:#DDDCD5;
+    --gold:#EBB64E; --gold-text:#9A6B08; --on-gold:#17120A; --live:#1E8A50; --lab:#4B57C8;
+    --shadow:0 24px 50px -32px rgba(20,22,27,.35);
+  }
+}
+:root[data-theme="light"]{
+  color-scheme:light;
+  --ground:#F4F4F1; --surface:#FFFFFF; --raise:#EFEEE9; --ink:#14161B; --muted:#545B67; --faint:#8A909B; --rule:#DDDCD5;
+  --gold:#EBB64E; --gold-text:#9A6B08; --on-gold:#17120A; --live:#1E8A50; --lab:#4B57C8;
+  --shadow:0 24px 50px -32px rgba(20,22,27,.35);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+img{max-width:100%}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.6;padding:0 24px;-webkit-font-smoothing:antialiased}
+.shell{max-width:1140px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+
+/* wordmark */
+.wm{font-family:var(--display);font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.wm .x{color:var(--gold-text)}
+
+/* header */
+header.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--ground) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);margin:0 -24px;padding:0 24px}
+header.bar .shell{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+header.bar .wm{font-size:19px;text-decoration:none}
+header.bar nav{display:flex;gap:26px;font-size:14.5px}
+header.bar nav a{text-decoration:none;color:var(--muted)}
+header.bar nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-weight:600;font-size:15px;text-decoration:none;border-radius:8px;padding:11px 18px;border:1px solid transparent;cursor:pointer;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--gold);color:var(--on-gold)}
+.btn.ghost{border-color:var(--rule);color:var(--ink);background:transparent}
+.btn.ghost:hover{background:var(--raise)}
+header.bar .btn{padding:8px 14px;font-size:14px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:center;padding-block:88px 72px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.eyebrow b{color:var(--gold-text);font-weight:500}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,6.2vw,72px);line-height:1.02;letter-spacing:-.035em;margin:18px 0 22px;text-wrap:balance}
+h1 .br{color:var(--gold-text);font-weight:500}
+.hero p.lede{font-size:19px;color:var(--muted);max-width:52ch;margin:0 0 30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+
+.index{background:var(--surface);border:1px solid var(--rule);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+.index .head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.04em}
+.index ol{list-style:none;margin:0;padding:6px 0}
+.index li a,.index li .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 18px;text-decoration:none}
+.index li a:hover{background:var(--raise)}
+.index .nm{font-family:var(--display);font-weight:600;font-size:17px}
+.index .cat{display:block;font-size:13px;color:var(--muted);font-family:var(--body);font-weight:400}
+.status{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;color:var(--muted)}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--live);box-shadow:0 0 0 3px color-mix(in srgb,var(--live) 22%,transparent)}
+.status.lab::before{background:var(--lab);box-shadow:0 0 0 3px color-mix(in srgb,var(--lab) 22%,transparent)}
+.index .foot{padding:12px 18px;border-top:1px solid var(--rule);font-size:13px;color:var(--faint)}
+
+/* sections */
+section.block{padding-block:72px;border-top:1px solid var(--rule)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px;margin-bottom:36px}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(30px,4vw,42px);letter-spacing:-.025em;line-height:1.1;margin:10px 0 0;text-wrap:balance}
+.sec-head p{color:var(--muted);max-width:46ch;margin:0}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:12.5px;padding:7px 13px;border-radius:999px;border:1px solid var(--rule);background:transparent;color:var(--muted);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+
+.work{display:grid;gap:28px}
+.proj{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:44px;align-items:center;background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:28px}
+.proj:nth-child(even) .shot{order:2}
+.shot{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--rule);background:var(--raise);text-decoration:none;box-shadow:var(--shadow);transition:transform .25s ease}
+.shot:hover{transform:translateY(-3px)}
+.shot .chrome{display:flex;align-items:center;gap:6px;padding:9px 12px;border-bottom:1px solid var(--rule);background:var(--raise)}
+.shot .chrome i{width:9px;height:9px;border-radius:50%;background:var(--rule);display:block}
+.shot .chrome span{margin-left:10px;font-family:var(--mono);font-size:11.5px;color:var(--faint);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.shot img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.proj .tag{font-family:var(--mono);font-size:12px;color:var(--gold-text);letter-spacing:.04em}
+.proj h3{font-family:var(--display);font-weight:700;font-size:32px;letter-spacing:-.02em;margin:8px 0 6px;line-height:1.1}
+.proj .one{font-size:18px;color:var(--ink);margin:0 0 14px;font-weight:500}
+.proj p{color:var(--muted);margin:0 0 16px;max-width:52ch}
+.proj ul{margin:0 0 20px;padding:0;list-style:none;display:grid;gap:7px}
+.proj li{padding-left:22px;position:relative;font-size:15.5px}
+.proj li::before{content:"";position:absolute;left:3px;top:.62em;width:9px;height:1.5px;background:var(--gold)}
+.facts{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 22px}
+.facts span{font-family:var(--mono);font-size:11.5px;color:var(--muted);border:1px solid var(--rule);padding:4px 9px;border-radius:6px}
+.open{display:inline-flex;align-items:center;gap:8px;font-weight:600;text-decoration:none;color:var(--ink);border-bottom:1.5px solid var(--gold);padding-bottom:2px}
+.open:hover{color:var(--gold-text)}
+
+/* lab */
+.lab-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.lab-card{border:1px dashed var(--rule);border-radius:14px;padding:26px;background:transparent}
+.lab-card .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
+.lab-card h3{font-family:var(--display);font-size:24px;font-weight:700;margin:0;letter-spacing:-.015em}
+.lab-card p{color:var(--muted);margin:0 0 14px}
+.lab-card .stack{font-family:var(--mono);font-size:12px;color:var(--faint)}
+
+/* principles */
+.prin{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--rule);border-radius:14px;overflow:hidden}
+.prin div{padding:26px 22px;border-right:1px solid var(--rule);background:var(--surface)}
+.prin div:last-child{border-right:0}
+.prin .k{font-family:var(--mono);font-size:12px;color:var(--gold-text);letter-spacing:.04em}
+.prin h4{font-family:var(--display);font-size:19px;font-weight:600;margin:10px 0 8px;letter-spacing:-.01em}
+.prin p{color:var(--muted);font-size:15px;margin:0}
+
+/* about/contact */
+.about{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:start}
+.about p{color:var(--muted);max-width:58ch;font-size:17.5px}
+.about p strong{color:var(--ink);font-weight:600}
+.contact{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:26px}
+.contact h3{font-family:var(--display);font-size:24px;margin:0 0 6px;font-weight:700}
+.contact p{color:var(--muted);font-size:15.5px;margin:0 0 18px}
+.line{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--rule)}
+.line .lbl{font-family:var(--mono);font-size:11.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.06em;display:block}
+.line .val{font-weight:600;word-break:break-all;user-select:all}
+.copy{font-family:var(--mono);font-size:12px;border:1px solid var(--rule);background:transparent;color:var(--ink);border-radius:6px;padding:6px 10px;cursor:pointer;white-space:nowrap}
+.copy:hover{background:var(--raise)}
+
+footer.foot{border-top:1px solid var(--rule);padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:var(--faint);font-size:13.5px}
+footer.foot .wm{color:var(--ink);font-size:16px}
+
+@media (max-width:920px){
+  .hero{grid-template-columns:minmax(0,1fr);gap:40px;padding-block:56px 48px}
+  .proj{grid-template-columns:minmax(0,1fr);gap:24px;padding:20px}
+  .proj:nth-child(even) .shot{order:0}
+  .prin{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .prin div:nth-child(2){border-right:0}
+  .prin div:nth-child(-n+2){border-bottom:1px solid var(--rule)}
+  .about{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){
+  body{padding:0 16px}
+  header.bar{margin:0 -16px;padding:0 16px}
+  header.bar nav{display:none}
+  .lab-grid{grid-template-columns:minmax(0,1fr)}
+  .prin{grid-template-columns:minmax(0,1fr)}
+  .prin div{border-right:0;border-bottom:1px solid var(--rule)}
+  .prin div:last-child{border-bottom:0}
+  .proj h3{font-size:27px}
+  section.block{padding-block:56px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="shell">
+    <a class="wm" href="#top" aria-label="JohnsonXCorp home">Johnson<span class="x">[X]</span>Corp</a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#lab">In the lab</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn ghost" href="#contact">Get in touch</a>
+  </div>
+</header>
+
+<main class="shell" id="top">
+  <section class="hero">
+    <div>
+      <div class="eyebrow"><b>[X]</b> Independent software studio · Kamloops, BC</div>
+      <h1>Small apps, engineered to be <span class="br">used every day.</span></h1>
+      <p class="lede">JohnsonXCorp builds focused web apps for reading, studying, learning languages and planning a term. They open in any browser, install like a phone app, and keep what you put in them private.</p>
+      <div class="cta">
+        <a class="btn primary" href="#work">See the work →</a>
+        <a class="btn ghost" href="#contact">Work with us</a>
+      </div>
+    </div>
+
+    <div class="index" aria-label="Product index">
+      <div class="head"><span>PRODUCT INDEX</span><span>4 LIVE · 2 IN LAB</span></div>
+      <ol>
+        <li><a href="#read-fast"><span><span class="nm">Read Fast</span><span class="cat">Speed reading</span></span><span class="status">LIVE</span></a></li>
+        <li><a href="#uni-made-ez"><span><span class="nm">UNI Made EZ</span><span class="cat">Study tools</span></span><span class="status">LIVE</span></a></li>
+        <li><a href="#vamos"><span><span class="nm">Vamos</span><span class="cat">Language learning</span></span><span class="status">LIVE</span></a></li>
+        <li><a href="#syllabus-desk"><span><span class="nm">Syllabus Desk</span><span class="cat">Term planning</span></span><span class="status">LIVE</span></a></li>
+        <li><a href="#lab"><span><span class="nm">Invest EZ</span><span class="cat">Trading research</span></span><span class="status lab">IN LAB</span></a></li>
+        <li><a href="#lab"><span><span class="nm">AcquireCanada</span><span class="cat">Business acquisition</span></span><span class="status lab">IN LAB</span></a></li>
+      </ol>
+      <div class="foot">Every live app is free to open. No download needed.</div>
+    </div>
+  </section>
+
+  <section class="block" id="work">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Live products</div>
+        <h2>The work</h2>
+      </div>
+      <div class="chips" role="group" aria-label="Filter projects">
+        <button class="chip" type="button" id="f-all" data-f="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" id="f-learn" data-f="learn" aria-pressed="false">Learning</button>
+        <button class="chip" type="button" id="f-read" data-f="read" aria-pressed="false">Reading</button>
+        <button class="chip" type="button" id="f-plan" data-f="plan" aria-pressed="false">Planning</button>
+      </div>
+    </div>
+
+    <div class="work">
+      <article class="proj" id="read-fast" data-cat="read">
+        <a class="shot" href="https://thepastor.github.io/read-fast/" target="_blank" rel="noopener" aria-label="Open Read Fast">
+          <div class="chrome"><i></i><i></i><i></i><span>thepastor.github.io/read-fast</span></div>
+          <img src="images/read-fast.webp" alt="Read Fast home screen: 'Read at the speed of thought' with a drop zone for books" loading="lazy">
+        </a>
+        <div>
+          <div class="tag">[ READING ]</div>
+          <h3>Read Fast</h3>
+          <p class="one">Read at the speed of thought.</p>
+          <p>Drop in a book and read it one word at a time, centred on the screen, at whatever pace you choose. The words come to you, so your eyes don't have to travel.</p>
+          <ul>
+            <li>Opens PDF, EPUB, DOCX, TXT, Markdown and ZIP</li>
+            <li>Words-per-minute control, pause, and a live page counter</li>
+            <li>Your library stays in your browser; nothing is uploaded</li>
+          </ul>
+          <div class="facts"><span>Installable</span><span>Private by design</span><span>Free</span></div>
+          <a class="open" href="https://thepastor.github.io/read-fast/" target="_blank" rel="noopener">Open Read Fast ↗</a>
+        </div>
+      </article>
+
+      <article class="proj" id="uni-made-ez" data-cat="learn">
+        <a class="shot" href="https://thepastor.github.io/uni-made-ez/" target="_blank" rel="noopener" aria-label="Open UNI Made EZ">
+          <div class="chrome"><i></i><i></i><i></i><span>thepastor.github.io/uni-made-ez</span></div>
+          <img src="images/uni-made-ez.webp" alt="UNI Made EZ welcome screen listing full courses and the upload-your-own-files option" loading="lazy">
+        </a>
+        <div>
+          <div class="tag">[ LEARNING ]</div>
+          <h3>UNI Made EZ</h3>
+          <p class="one">Your lecture files, turned into a study session.</p>
+          <p>Two ways to study: full university courses written out in detail, or your own lecture files turned into study material in seconds.</p>
+          <ul>
+            <li>Flash cards, a summary, key information and a quiz from any file</li>
+            <li>Courses in math, law, accounting, sciences, economics and statistics</li>
+            <li>Multiple-choice, true/false and fill-in-the-blank questions</li>
+          </ul>
+          <div class="facts"><span>Runs in your browser</span><span>Installable</span><span>Free</span></div>
+          <a class="open" href="https://thepastor.github.io/uni-made-ez/" target="_blank" rel="noopener">Open UNI Made EZ ↗</a>
+        </div>
+      </article>
+
+      <article class="proj" id="vamos" data-cat="learn">
+        <a class="shot" href="https://thepastor.github.io/vamos/" target="_blank" rel="noopener" aria-label="Open Vamos">
+          <div class="chrome"><i></i><i></i><i></i><span>thepastor.github.io/vamos</span></div>
+          <img src="images/vamos.webp" alt="Vamos home screen with a quetzal companion, lesson button and streak tracker" loading="lazy">
+        </a>
+        <div>
+          <div class="tag">[ LANGUAGES ]</div>
+          <h3>Vamos</h3>
+          <p class="one">From the very first word to real fluency.</p>
+          <p>A full language course with a lesson path, daily streaks and games that make practice feel like play. Earn XP to grow a companion character that evolves as you do.</p>
+          <ul>
+            <li>Spanish, French and Japanese</li>
+            <li>Speaking practice, dictation, sentence building and spaced review</li>
+            <li>Games like Mercado, Lotería and a daily crossword</li>
+          </ul>
+          <div class="facts"><span>3 languages</span><span>Progress syncs across devices</span><span>Installable</span></div>
+          <a class="open" href="https://thepastor.github.io/vamos/" target="_blank" rel="noopener">Open Vamos ↗</a>
+        </div>
+      </article>
+
+      <article class="proj" id="syllabus-desk" data-cat="plan">
+        <a class="shot" href="https://thepastor.github.io/syllabus-desk/" target="_blank" rel="noopener" aria-label="Open Syllabus Desk">
+          <div class="chrome"><i></i><i></i><i></i><span>thepastor.github.io/syllabus-desk</span></div>
+          <img src="images/syllabus-desk.webp" alt="Syllabus Desk: 'Every deadline in your term, on one page' with a three-step guide" loading="lazy">
+        </a>
+        <div>
+          <div class="tag">[ PLANNING ]</div>
+          <h3>Syllabus Desk</h3>
+          <p class="one">Every deadline in your term, on one page.</p>
+          <p>Add each course outline once. Syllabus Desk pulls out the exams, quizzes and due dates, lets you check them, then gives you the whole term week by week.</p>
+          <ul>
+            <li>Paste an outline or drop in the PDF or Word file</li>
+            <li>Every date lands in an editable table first, so nothing is guessed</li>
+            <li>Export to Google or Apple Calendar so reminders follow you</li>
+          </ul>
+          <div class="facts"><span>Used by students at TRU</span><span>Installable</span><span>Free</span></div>
+          <a class="open" href="https://thepastor.github.io/syllabus-desk/" target="_blank" rel="noopener">Open Syllabus Desk ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="lab">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">In development</div>
+        <h2>In the lab</h2>
+      </div>
+      <p>Larger systems being built and tested before release. Not available to the public yet.</p>
+    </div>
+    <div class="lab-grid">
+      <div class="lab-card">
+        <div class="top"><h3>Invest EZ</h3><span class="status lab">IN LAB</span></div>
+        <p>A systematic swing-trading research desk. It generates daily trade ideas and learns from its own results. It runs on paper trading only while the strategy is being proven.</p>
+        <div class="stack">Desktop app · Python agents</div>
+      </div>
+      <div class="lab-card">
+        <div class="top"><h3>AcquireCanada</h3><span class="status lab">IN LAB</span></div>
+        <p>A platform for buying and selling Canadian businesses, with an AI deal assistant and a First Nations business module built on FPIC principles.</p>
+        <div class="stack">Next.js · TypeScript · PostgreSQL</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="approach">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Approach</div>
+        <h2>How we build</h2>
+      </div>
+      <p>The same rules hold for every product, from a speed reader to a study app.</p>
+    </div>
+    <div class="prin">
+      <div><div class="k">[ 01 ]</div><h4>Opens anywhere</h4><p>Every app runs in the browser. No app store, no account needed to start.</p></div>
+      <div><div class="k">[ 02 ]</div><h4>Private by default</h4><p>Books and study files are read in your browser, not stored on our servers.</p></div>
+      <div><div class="k">[ 03 ]</div><h4>Installs like an app</h4><p>Add any product to your home screen and it opens full-screen, like a native app.</p></div>
+      <div><div class="k">[ 04 ]</div><h4>Always shipping</h4><p>Updates go straight to the live app. There's never a new version to download.</p></div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="about">
+      <div>
+        <div class="eyebrow">About</div>
+        <h2>Built in Kamloops</h2>
+        <p style="margin-top:18px"><strong>JohnsonXCorp is an independent software studio in Kamloops, British Columbia.</strong> It started with a simple question: what small tool would make this easier? The answers became Read Fast, UNI Made EZ, Vamos and Syllabus Desk.</p>
+        <p>Every product is designed, built and maintained in-house, with the same care whether ten people use it or ten thousand.</p>
+      </div>
+      <div class="contact">
+        <h3>Work with us</h3>
+        <p>Have an idea for a tool, want a custom build, or found a bug? Get in touch.</p>
+        <div class="line">
+          <div><span class="lbl">Email</span><span class="val" id="email">johnsonxcorp@outlook.com</span></div>
+          <button class="copy" type="button" id="copy-email">Copy</button>
+        </div>
+        <div class="line">
+          <div><span class="lbl">GitHub</span><a class="val" href="https://github.com/ThePastor" target="_blank" rel="noopener">github.com/ThePastor</a></div>
+          <span class="status">OPEN</span>
+        </div>
+        <div class="line">
+          <div><span class="lbl">Based in</span><span class="val" style="user-select:auto">Kamloops, BC, Canada</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span class="wm">Johnson<span class="x">[X]</span>Corp</span>
+    <span>© 2026 JohnsonXCorp. All rights reserved.</span>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var chips=document.querySelectorAll('.chip');
+  var cards=document.querySelectorAll('.proj');
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      var f=c.getAttribute('data-f');
+      chips.forEach(function(x){x.setAttribute('aria-pressed',String(x===c));});
+      cards.forEach(function(card){card.hidden=!(f==='all'||card.getAttribute('data-cat')===f);});
+    });
+  });
+  var btn=document.getElementById('copy-email');
+  btn.addEventListener('click',function(){
+    var t=document.getElementById('email').textContent;
+    function done(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy';},1600);}
+    function fallback(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected';setTimeout(function(){btn.textContent='Copy';},1600);}
+    try{navigator.clipboard.writeText(t).then(done,fallback);}catch(e){fallback();}
+  });
+})();
+</script>
+</body>
+</html>
