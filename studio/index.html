@@ -11,9 +11,8 @@
 <title>JohnsonX Studio — small business websites, Kamloops BC</title>
 <meta name="description" content="JohnsonX Studio builds fast, modern websites for small businesses in Kamloops, BC. See your new homepage free before you pay. Call or text 250-879-5043.">
 <link rel="canonical" href="https://thepastor.github.io/studio/">
-<meta name="color-scheme" content="dark light">
-<meta name="theme-color" content="#0D0F13" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#F4F4F1" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F8F7F3">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -32,33 +31,20 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 :root{
-  color-scheme:dark;
-  --ground:#0D0F13; --surface:#14171D; --raise:#1B1F27; --ink:#EEEFF2; --muted:#9AA1AD; --faint:#646B78; --rule:#252A34;
-  --gold:#EBB64E; --gold-text:#EBB64E; --on-gold:#17120A; --live:#5BC48A; --lab:#8E9BFF;
-  --shadow:0 24px 60px -30px rgba(0,0,0,.8);
+  color-scheme:light;
+  --ground:#F8F7F3; --surface:#FFFFFF; --raise:#F1EFE8; --ink:#14213D; --muted:#4A5568; --faint:#737C8C; --rule:#E2DED3;
+  --gold:#E0A93A; --gold-text:#9A6B08; --on-gold:#17120A; --btn:#1B2B4B; --btn-hover:#233861; --on-btn:#FFFFFF;
+  --live:#1E8A50; --lab:#4B57C8;
+  --shadow:0 22px 44px -28px rgba(20,33,61,.28);
   --display:"Outfit","Avenir Next","Segoe UI",system-ui,sans-serif;
   --body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
-}
-@media (prefers-color-scheme: light){
-  :root:not([data-theme="dark"]){
-    color-scheme:light;
-    --ground:#F4F4F1; --surface:#FFFFFF; --raise:#EFEEE9; --ink:#14161B; --muted:#545B67; --faint:#8A909B; --rule:#DDDCD5;
-    --gold:#EBB64E; --gold-text:#9A6B08; --on-gold:#17120A; --live:#1E8A50; --lab:#4B57C8;
-    --shadow:0 24px 50px -32px rgba(20,22,27,.35);
-  }
-}
-:root[data-theme="light"]{
-  color-scheme:light;
-  --ground:#F4F4F1; --surface:#FFFFFF; --raise:#EFEEE9; --ink:#14161B; --muted:#545B67; --faint:#8A909B; --rule:#DDDCD5;
-  --gold:#EBB64E; --gold-text:#9A6B08; --on-gold:#17120A; --live:#1E8A50; --lab:#4B57C8;
-  --shadow:0 24px 50px -32px rgba(20,22,27,.35);
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 img{max-width:100%}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.6;padding:0 24px;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:17.5px;line-height:1.65;padding:0 24px;-webkit-font-smoothing:antialiased}
 .shell{max-width:1140px;margin:0 auto}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
@@ -76,7 +62,8 @@ header.bar nav a{text-decoration:none;color:var(--muted)}
 header.bar nav a:hover{color:var(--ink)}
 .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-weight:600;font-size:15px;text-decoration:none;border-radius:8px;padding:11px 18px;border:1px solid transparent;cursor:pointer;transition:transform .15s ease,background .15s ease}
 .btn:hover{transform:translateY(-1px)}
-.btn.primary{background:var(--gold);color:var(--on-gold)}
+.btn.primary{background:var(--btn);color:var(--on-btn)}
+.btn.primary:hover{background:var(--btn-hover)}
 .btn.ghost{border-color:var(--rule);color:var(--ink);background:transparent}
 .btn.ghost:hover{background:var(--raise)}
 header.bar .btn{padding:8px 14px;font-size:14px}
@@ -87,7 +74,7 @@ header.bar .btn{padding:8px 14px;font-size:14px}
 .eyebrow b{color:var(--gold-text);font-weight:500}
 h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,6.2vw,72px);line-height:1.02;letter-spacing:-.035em;margin:18px 0 22px;text-wrap:balance}
 h1 .br{color:var(--gold-text);font-weight:500}
-.hero p.lede{font-size:19px;color:var(--muted);max-width:52ch;margin:0 0 30px}
+.hero p.lede{font-size:20px;color:var(--muted);max-width:52ch;margin:0 0 30px}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
 
 .index{background:var(--surface);border:1px solid var(--rule);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
@@ -188,7 +175,7 @@ footer.foot .wm{color:var(--ink);font-size:16px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 .offer .steps-mini{list-style:none;margin:0;padding:8px 0}
 .offer .steps-mini li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;padding:12px 18px;align-items:start}
-.offer .n{width:26px;height:26px;border-radius:50%;background:var(--gold);color:var(--on-gold);display:grid;place-items:center;font-family:var(--mono);font-size:12.5px;font-weight:500}
+.offer .n{width:26px;height:26px;border-radius:50%;background:var(--btn);color:var(--on-btn);display:grid;place-items:center;font-family:var(--mono);font-size:12.5px;font-weight:500}
 .offer b{font-family:var(--display);font-weight:600;font-size:16.5px;display:block}
 .offer .cat{display:block;font-size:14px;color:var(--muted)}
 .tgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
@@ -205,8 +192,8 @@ footer.foot .wm{color:var(--ink);font-size:16px}
 .proof a{color:var(--ink);text-decoration-color:var(--gold);text-underline-offset:3px}
 .prices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:stretch}
 .price{position:relative;background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:24px 20px;display:flex;flex-direction:column}
-.price.feat{border-color:var(--gold);box-shadow:var(--shadow)}
-.flag{position:absolute;top:-11px;left:20px;background:var(--gold);color:var(--on-gold);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+.price.feat{border-color:var(--btn);border-width:1.5px;box-shadow:var(--shadow)}
+.flag{position:absolute;top:-11px;left:20px;background:var(--btn);color:var(--on-btn);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
 .pname{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-text)}
 .amt{font-family:var(--display);font-weight:700;font-size:38px;letter-spacing:-.02em;margin:6px 0 8px;font-variant-numeric:tabular-nums}
 .amt small{font-size:14px;font-weight:500;color:var(--muted);letter-spacing:0}
