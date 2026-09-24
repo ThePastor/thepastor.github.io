@@ -289,6 +289,22 @@ footer.foot{padding-inline:0}
 footer.foot a{color:inherit}
 @media (max-width:900px){.split{grid-template-columns:minmax(0,1fr)}.detail{position:static}.kpis{grid-template-columns:1fr 1fr}.addlink{grid-template-columns:1fr}}
 @media (max-width:640px){header.bar nav{display:flex!important;gap:14px;font-size:13.5px}header.bar .shell{flex-wrap:wrap;height:auto;padding-block:10px}.facts2,.two{grid-template-columns:1fr}.lrow{grid-template-columns:1fr auto auto}.lrow .muted{grid-column:1/-1;order:3}}
+
+.pwwrap{position:relative}.pwwrap input{padding-right:64px}
+.peek{position:absolute;right:6px;top:50%;transform:translateY(-50%);font:inherit;font-size:13px;border:0;background:transparent;color:var(--btn);cursor:pointer;padding:6px 8px}
+.alt{font-size:14px;color:var(--muted);margin:16px 0 0}
+.linkbtn{font:inherit;color:var(--btn);background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.acct{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:18px;align-items:start}
+.acctbox{padding:24px}.acctbox h2{font-size:22px;margin:0 0 6px}
+.acctbox label{display:block;font-size:13.5px;font-weight:600;margin:14px 0 5px}
+.acctbox input{width:100%;font:inherit;font-size:15.5px;color:var(--ink);background:var(--ground);border:1px solid var(--rule);border-radius:8px;padding:10px 12px}
+.acctbox button.btn{margin-top:18px}
+.meter{height:6px;background:var(--raise);border-radius:99px;margin-top:8px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;border-radius:99px;transition:width .2s;background:#B42318}
+.meter i.ok{background:#C98A0B}.meter i.good{background:#2F7D4B}.meter i.strong{background:#146C3A}
+.hint{font-size:13px;color:var(--muted);margin:6px 0 0}
+.tips{margin:8px 0 0;padding-left:20px;color:var(--muted)}.tips li{margin:8px 0}
+@media (max-width:900px){.acct{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -299,6 +315,7 @@ footer.foot a{color:inherit}
       <a href="#requests" data-tab="requests" class="on">Requests <span class="count" id="newcount" hidden></span></a>
       <a href="#payments" data-tab="payments">Payments</a>
       <a href="#setup" data-tab="setup">Payment setup</a>
+      <a href="#account" data-tab="account">Account</a>
     </nav>
     <button class="btn ghost small" id="signout" type="button" hidden>Sign out</button>
   </div>
@@ -309,12 +326,15 @@ footer.foot a{color:inherit}
   <section id="login" class="login" hidden>
     <div class="eyebrow"><b>[X]</b> Owner only</div>
     <h1>Studio Desk</h1>
-    <p class="lede">Your private dashboard for mockup requests, clients and payments. Sign in with the owner email and a one-time link is sent to your inbox. There's no password to remember or leak.</p>
-    <form id="loginform" class="card loginbox" novalidate>
+    <p class="lede">Your private dashboard for mockup requests, clients and payments. Only the owner account can sign in.</p>
+    <form id="pwform" class="card loginbox" novalidate>
       <label for="l-email">Owner email</label>
-      <input id="l-email" type="email" autocomplete="email" value="johnsonxcorp@outlook.com">
-      <button class="btn primary" type="submit" id="l-send">Email me a sign-in link</button>
+      <input id="l-email" type="email" autocomplete="username" value="johnsonxcorp@outlook.com">
+      <label for="l-pass">Password</label>
+      <div class="pwwrap"><input id="l-pass" type="password" autocomplete="current-password"><button type="button" class="peek" data-for="l-pass" aria-label="Show password">Show</button></div>
+      <button class="btn primary" type="submit" id="l-go">Sign in</button>
       <p class="formnote" id="l-note" role="status"></p>
+      <p class="alt">No password yet, or forgot it? <button type="button" class="linkbtn" id="l-link">Email me a one-time sign-in link</button>. Once you're in, set a new password under <b>Account</b>.</p>
     </form>
   </section>
 
@@ -361,6 +381,33 @@ footer.foot a{color:inherit}
     <h2 class="saved-h">Your saved payment links</h2>
     <p class="muted">Paste each Stripe link once. They're saved in this browser and offered when you create a payment.</p>
     <div class="card linkbox" id="links"></div>
+  </section>
+  <!-- account -->
+  <section id="account" class="panel" hidden>
+    <div class="deskhead"><div><div class="eyebrow">Owner</div><h1>Account</h1></div></div>
+    <div class="acct">
+      <form id="setpw" class="card acctbox" novalidate>
+        <h2>Your password</h2>
+        <p class="muted">Signed in as <b id="who">—</b>. Set a password so you can sign in without waiting for an email link. Use at least 10 characters. A short phrase is easiest to remember.</p>
+        <label for="n-pass">New password</label>
+        <div class="pwwrap"><input id="n-pass" type="password" autocomplete="new-password" minlength="10"><button type="button" class="peek" data-for="n-pass" aria-label="Show password">Show</button></div>
+        <div class="meter" aria-hidden="true"><i id="meter"></i></div>
+        <p class="hint" id="n-hint">At least 10 characters.</p>
+        <label for="n-pass2">Type it again</label>
+        <input id="n-pass2" type="password" autocomplete="new-password">
+        <button class="btn primary" type="submit" id="n-save">Save password</button>
+        <p class="formnote" id="n-note" role="status"></p>
+      </form>
+      <div class="card acctbox">
+        <h2>Staying safe</h2>
+        <ul class="tips">
+          <li>Save the password in your iPhone or Mac password manager (it will offer when you sign in).</li>
+          <li>Don't reuse your Outlook or bank password here.</li>
+          <li>Forgot it? Use <b>Email me a one-time sign-in link</b> on the sign-in page, then set a new one here.</li>
+          <li>Only johnsonxcorp@outlook.com can ever see your requests and payments. Nobody else can create an account.</li>
+        </ul>
+      </div>
+    </div>
   </section>
 </main>
 
@@ -416,14 +463,26 @@ var LS={get:function(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(
 // ---------- auth ----------
 function show(signedIn){
   $('login').hidden=signedIn; $('tabs').hidden=!signedIn; $('signout').hidden=!signedIn;
-  if(signedIn){ go(location.hash.replace('#','')||'requests'); loadAll(); } else { ['requests','payments','setup'].forEach(function(p){$(p).hidden=true;}); }
+  if(signedIn) sb.auth.getUser().then(function(u){ $('who').textContent=(u.data&&u.data.user&&u.data.user.email)||'the owner'; });
+  if(signedIn){ go(location.hash.replace('#','')||'requests'); loadAll(); } else { ['requests','payments','setup','account'].forEach(function(p){$(p).hidden=true;}); }
 }
-$('loginform').addEventListener('submit',function(e){
-  e.preventDefault(); var em=$('l-email').value.trim(), n=$('l-note');
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){n.textContent='Enter the owner email address.';return;}
-  $('l-send').disabled=true; n.className='formnote'; n.textContent='Sending…';
+$('pwform').addEventListener('submit',function(e){
+  e.preventDefault(); var em=$('l-email').value.trim(), pw=$('l-pass').value, n=$('l-note');
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){n.className='formnote';n.textContent='Enter the owner email address.';return;}
+  if(!pw){n.className='formnote';n.textContent='Enter your password, or use the one-time link below.';return;}
+  $('l-go').disabled=true; n.className='formnote'; n.textContent='Signing in…';
+  sb.auth.signInWithPassword({email:em,password:pw}).then(function(r){
+    $('l-go').disabled=false;
+    if(r.error){ n.textContent=/invalid/i.test(r.error.message)?'That email and password don\u2019t match. If you haven\u2019t set a password yet, use the one-time link below.':r.error.message; return; }
+    n.textContent=''; $('l-pass').value='';
+  });
+});
+$('l-link').addEventListener('click',function(){
+  var em=$('l-email').value.trim(), n=$('l-note');
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){n.className='formnote';n.textContent='Enter the owner email address first.';return;}
+  $('l-link').disabled=true; n.className='formnote'; n.textContent='Sending…';
   sb.auth.signInWithOtp({email:em,options:{shouldCreateUser:false,emailRedirectTo:HERE}}).then(function(r){
-    $('l-send').disabled=false;
+    $('l-link').disabled=false;
     if(r.error){ n.textContent=/rate|seconds/i.test(r.error.message)?'Too many links requested. Wait a minute and try again.':'That email isn’t the owner account, or the link couldn’t be sent. ('+r.error.message+')'; return; }
     n.className='formnote ok'; n.textContent='Check '+em+' for a sign-in link from Supabase. Open it on this device. It works once and expires in an hour.';
   });
@@ -432,8 +491,8 @@ $('signout').addEventListener('click',function(){sb.auth.signOut().then(function
 sb.auth.onAuthStateChange(function(ev,session){ if(ev==='SIGNED_IN'||ev==='INITIAL_SESSION'){ show(!!session); if(session&&/access_token/.test(location.hash)) history.replaceState(null,'',location.pathname+'#requests'); } if(ev==='SIGNED_OUT') show(false); });
 
 // ---------- tabs ----------
-function go(tab){ if(['requests','payments','setup'].indexOf(tab)<0) tab='requests';
-  ['requests','payments','setup'].forEach(function(p){$(p).hidden=p!==tab;});
+function go(tab){ if(['requests','payments','setup','account'].indexOf(tab)<0) tab='requests';
+  ['requests','payments','setup','account'].forEach(function(p){$(p).hidden=p!==tab;});
   document.querySelectorAll('#tabs a').forEach(function(a){a.classList.toggle('on',a.getAttribute('data-tab')===tab);});
   if(tab==='setup') renderLinks(); }
 document.querySelectorAll('#tabs a').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=a.getAttribute('data-tab');history.replaceState(null,'','#'+t);go(t);});});
@@ -565,6 +624,25 @@ $('payform').addEventListener('submit',function(e){
   q.then(function(res){ $('p-save').disabled=false; if(res.error){n.textContent='Not saved: '+res.error.message;return;}
     var saved=res.data[0]; if(state.editPay){Object.assign(state.editPay,saved);} else state.pays.unshift(saved);
     $('paydlg').close(); renderPays(); renderDetail(); toast(state.editPay?'Payment updated':'Payment saved'); });
+});
+
+// ---------- account / password ----------
+document.querySelectorAll('.peek').forEach(function(b){b.addEventListener('click',function(){var i=$(b.getAttribute('data-for')); var sh=i.type==='password'; i.type=sh?'text':'password'; b.textContent=sh?'Hide':'Show'; b.setAttribute('aria-label',sh?'Hide password':'Show password');});});
+function score(p){var s=0; if(p.length>=10)s++; if(p.length>=14)s++; if(/[a-z]/.test(p)&&/[A-Z]/.test(p))s++; if(/\d/.test(p))s++; if(/[^A-Za-z0-9]/.test(p))s++; return Math.min(s,4);}
+$('n-pass').addEventListener('input',function(){var p=$('n-pass').value, sc=score(p), m=$('meter');
+  m.style.width=(p?Math.max(12,sc*25):0)+'%'; m.className=['weak','weak','ok','good','strong'][sc];
+  $('n-hint').textContent=p.length<10?(10-p.length)+' more character'+(10-p.length===1?'':'s')+' needed.':['Weak','Weak','Okay','Good','Strong'][sc]+' password.';});
+$('setpw').addEventListener('submit',function(e){
+  e.preventDefault(); var p=$('n-pass').value, p2=$('n-pass2').value, n=$('n-note'); n.className='formnote';
+  if(p.length<10){n.textContent='Use at least 10 characters.';return;}
+  if(p!==p2){n.textContent='The two passwords don’t match.';return;}
+  $('n-save').disabled=true; n.textContent='Saving…';
+  sb.auth.updateUser({password:p}).then(function(r){
+    $('n-save').disabled=false;
+    if(r.error){ n.textContent=/reauth|recent/i.test(r.error.message)?'For safety, sign out, sign back in with an email link, then set it again.':r.error.message; return; }
+    $('n-pass').value=''; $('n-pass2').value=''; $('meter').style.width='0'; $('n-hint').textContent='At least 10 characters.';
+    n.className='formnote ok'; n.textContent='Password saved. Next time, sign in with your email and this password.'; toast('Password saved');
+  });
 });
 
 // ---------- saved links (per browser) ----------
