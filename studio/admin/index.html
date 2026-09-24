@@ -305,6 +305,7 @@ footer.foot a{color:inherit}
 .hint{font-size:13px;color:var(--muted);margin:6px 0 0}
 .tips{margin:8px 0 0;padding-left:20px;color:var(--muted)}.tips li{margin:8px 0}
 @media (max-width:900px){.acct{grid-template-columns:minmax(0,1fr)}}
+.welcome{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:12px 0 0;padding:10px 12px;border-radius:10px;background:#FBF6EA;border:1px solid #F0E2BF;color:#14213D;font-size:14px}.welcome.ok{background:#EEF6EF;border-color:#CFE5D4;color:#1F5130}
 </style>
 </head>
 <body>
@@ -458,6 +459,17 @@ function money(c){return '$'+(c/100).toLocaleString('en-CA',{minimumFractionDigi
 function when(t){var d=new Date(t),s=(Date.now()-d)/1000; if(s<3600)return Math.max(1,Math.round(s/60))+' min ago'; if(s<86400)return Math.round(s/3600)+' h ago'; if(s<86400*7)return Math.round(s/86400)+' d ago'; return d.toLocaleDateString('en-CA',{month:'short',day:'numeric'});}
 function toast(t){var el=$('toast'); el.textContent=t; el.hidden=false; clearTimeout(toast.t); toast.t=setTimeout(function(){el.hidden=true;},2600);}
 function copy(t,msg){try{navigator.clipboard.writeText(t).then(function(){toast(msg||'Copied');},function(){prompt('Copy this:',t);});}catch(e){prompt('Copy this:',t);}}
+function first(n){return String(n||'').trim().split(/\s+/)[0]||'there';}
+function outlook(to,subj,body){return 'https://outlook.live.com/mail/0/deeplink/compose?to='+encodeURIComponent(to||'')+'&subject='+encodeURIComponent(subj||'')+'&body='+encodeURIComponent(body||'');}
+function welcomeSubject(r){return 'Got it, '+first(r.name)+'! Your free mockup request is in';}
+function welcomeText(r){
+  var how=r.phone?"I'll call or text you at "+r.phone:"I'll email you back";
+  return 'Hi '+first(r.name)+',\n\nThanks for reaching out to JohnsonX Studio about '+r.business+'. Your free mockup request came through, and '+how+' within one business day.\n\n'+
+  'WHAT HAPPENS NEXT\n1. A quick chat (about 10 minutes). I learn what you do and what isn\'t working today.\n2. Your free mockup (1-2 business days). A new homepage with your real details, at a link you can open on your phone.\n3. You decide. If you like it, we agree a price in a one-page agreement. If not, no cost and no hard feelings.\n\n'+
+  'WANT IT FASTER?\nReply to this email with any of these and I\'ll use them in your mockup:\n- your logo\n- 3-5 photos of your work, shop or team\n- your services or menu, with prices if you share them\n- your hours and address\n\n'+
+  'YOUR REQUEST\nBusiness: '+r.business+'\nLooking for: '+(r.need||'A website')+(r.site?'\nCurrent site: '+r.site:'')+(r.message?'\nYour note: '+r.message:'')+
+  '\n\nQuestions? Just reply, or call or text 250-879-5043.\n\nAnndy Johnson\nJohnsonX Studio\n250-879-5043 · johnsonxcorp@outlook.com\nhttps://thepastor.github.io/studio/';
+}
 var LS={get:function(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d;}catch(e){return d;}},set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}};
 
 // ---------- auth ----------
@@ -545,7 +557,8 @@ function renderDetail(){
   var pays=state.pays.filter(function(p){return p.request_id===r.id;});
   var tel=r.phone?r.phone.replace(/[^\d+]/g,''):'';
   el.innerHTML='<div class="dhead"><div><h2>'+esc(r.business)+'</h2><p class="muted">'+esc(r.name)+' · received '+new Date(r.created_at).toLocaleString('en-CA',{dateStyle:'medium',timeStyle:'short'})+'</p></div><span class="pill s-'+r.status+'">'+esc(SL[r.status])+'</span></div>'+
-   '<div class="actions">'+(r.phone?'<a class="btn ghost small" href="tel:'+esc(tel)+'">Call</a><a class="btn ghost small" href="sms:'+esc(tel)+'">Text</a>':'')+(r.email?'<a class="btn ghost small" href="mailto:'+esc(r.email)+'?subject='+encodeURIComponent('Your free website mockup, '+r.business)+'">Email</a>':'')+'<button class="btn ghost small" type="button" id="d-copy">Copy details</button></div>'+
+   '<div class="actions">'+(r.phone?'<a class="btn ghost small" href="tel:'+esc(tel)+'">Call</a><a class="btn ghost small" href="sms:'+esc(tel)+'">Text</a>':'')+(r.email?'<a class="btn ghost small" target="_blank" rel="noopener" href="'+esc(outlook(r.email,'Your free website mockup, '+r.business,'Hi '+first(r.name)+',\n\n'))+'">Email</a>':'')+'<button class="btn ghost small" type="button" id="d-copy">Copy details</button></div>'+
+   (r.email?'<div class="welcome'+(r.welcomed_at?' ok':'')+'">'+(r.welcomed_at?'<span>✓ Welcome email sent '+when(r.welcomed_at)+'</span>':'<span>Welcome email not sent yet</span><a class="btn ghost small" id="d-welcome" target="_blank" rel="noopener" href="'+esc(outlook(r.email,welcomeSubject(r),welcomeText(r)))+'">Send welcome email</a>')+'</div>':'')+
    '<dl class="facts2"><div><dt>Phone</dt><dd>'+(esc(r.phone)||'—')+'</dd></div><div><dt>Email</dt><dd>'+(esc(r.email)||'—')+'</dd></div><div><dt>Current site</dt><dd>'+(r.site?esc(r.site):'—')+'</dd></div><div><dt>Needs</dt><dd>'+esc(r.need||'—')+'</dd></div></dl>'+
    (r.message?'<div class="msg"><dt>Message</dt><p>'+esc(r.message).replace(/\n/g,'<br>')+'</p></div>':'')+
    '<div class="edit"><div class="two"><div><label for="d-status">Stage</label><select id="d-status">'+STAGES.map(function(s){return '<option value="'+s[0]+'"'+(s[0]===r.status?' selected':'')+'>'+s[1]+'</option>';}).join('')+'</select></div>'+
@@ -553,6 +566,7 @@ function renderDetail(){
    '<label for="d-notes">Private notes</label><textarea id="d-notes" rows="5" maxlength="8000" placeholder="What they said, what the mockup needs, follow-up dates…">'+esc(r.notes||'')+'</textarea>'+
    '<div class="dlgbtns"><button class="btn danger small" type="button" id="d-del">Delete</button><span class="grow"></span><button class="btn ghost small" type="button" id="d-pay">+ Payment</button><button class="btn primary small" type="button" id="d-save">Save</button></div></div>'+
    (pays.length?'<div class="dpays"><h3>Payments</h3>'+pays.map(function(p){return '<div class="dpay"><span>'+esc(kindLabel(p.kind))+'</span><b>'+money(p.amount_cents)+'</b><span class="pill p-'+p.status+'">'+esc(p.status)+'</span></div>';}).join('')+'</div>':'');
+  if($('d-welcome')) $('d-welcome').addEventListener('click',function(){ var at=new Date().toISOString(); sb.from('studio_requests').update({welcomed_at:at}).eq('id',r.id).then(function(res){ if(!res.error){ r.welcomed_at=at; renderDetail(); toast('Opened in Outlook. Press Send there.'); } }); });
   $('d-copy').onclick=function(){copy([r.business,r.name,r.phone,r.email,r.site,r.need,r.message].filter(Boolean).join('\n'),'Details copied');};
   $('d-save').onclick=function(){
     var q=$('d-quote').value.trim(); var patch={status:$('d-status').value,notes:$('d-notes').value.trim()||null,quote_cents:q===''?null:Math.round(parseFloat(q)*100)};
