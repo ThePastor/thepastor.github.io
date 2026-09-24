@@ -465,7 +465,7 @@ function welcomeSubject(r){return 'Got it, '+first(r.name)+'! Your free mockup r
 function welcomeText(r){
   var how=r.phone?"I'll call or text you at "+r.phone:"I'll email you back";
   return 'Hi '+first(r.name)+',\n\nThanks for reaching out to JohnsonX Studio about '+r.business+'. Your free mockup request came through, and '+how+' within one business day.\n\n'+
-  'WHAT HAPPENS NEXT\n1. A quick chat (about 10 minutes). I learn what you do and what isn\'t working today.\n2. Your free mockup (1-2 business days). A new homepage with your real details, at a link you can open on your phone.\n3. You decide. If you like it, we agree a price in a one-page agreement. If not, no cost and no hard feelings.\n\n'+
+  'WHAT HAPPENS NEXT\n1. A quick chat (about 10 minutes). I learn what you do and what isn\'t working today.\n2. Your free mockup (1-2 business days). A new homepage with your real details, at a link you can open on your phone.\n3. You decide. If you like it, we agree a price in a short written agreement. If not, no cost and no hard feelings.\n\n'+
   'WANT IT FASTER?\nReply to this email with any of these and I\'ll use them in your mockup:\n- your logo\n- 3-5 photos of your work, shop or team\n- your services or menu, with prices if you share them\n- your hours and address\n\n'+
   'YOUR REQUEST\nBusiness: '+r.business+'\nLooking for: '+(r.need||'A website')+(r.site?'\nCurrent site: '+r.site:'')+(r.message?'\nYour note: '+r.message:'')+
   '\n\nQuestions? Just reply, or call or text 250-879-5043.\n\nAnndy Johnson\nJohnsonX Studio\n250-879-5043 · johnsonxcorp@outlook.com\nhttps://thepastor.github.io/studio/';
