@@ -135,6 +135,18 @@ footer h3{color:#fff;font-size:17px;margin-bottom:10px}footer a{color:#fff}
 }
 @media(max-width:560px){.hdr .phone span{display:none}form.q .two,.creds,.steps,footer .wrap{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* iPhone / small-screen fixes */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:clip}
+.wrap{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.hdr{-webkit-backdrop-filter:blur(8px)}
+@media(max-width:900px){
+ .hero{min-height:0!important}
+ .hero{padding-block:28px 40px!important}
+ .actionbar{padding-left:max(8px,env(safe-area-inset-left,0px))!important;padding-right:max(8px,env(safe-area-inset-right,0px))!important}
+ body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+ footer{padding-bottom:40px!important}
+}
 </style>
 </head>
 <body>
@@ -152,13 +164,15 @@ footer h3{color:#fff;font-size:17px;margin-bottom:10px}footer a{color:#fff}
 </svg>
 
 <div class="jx-sample" role="note">
-  <span><b>Sample website</b> by JohnsonX Studio. The business shown is fictional.</span>
+  <span><b>Sample website</b><span class="jx-long"> by JohnsonX Studio</span>. The business shown is fictional.</span>
   <a href="../../#contact">Get one like this →</a>
 </div>
 <style>
 .jx-sample{position:relative;z-index:50;display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;align-items:center;padding:9px 16px;min-height:40px;background:#14213D;color:#FFFFFF;font:500 13.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;text-align:center}
 .jx-sample b{color:#EBB64E;font-weight:600}
 .jx-sample a{color:#14213D;background:#EBB64E;text-decoration:none;padding:4px 10px;border-radius:6px;font-weight:600}
+.jx-sample{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media(max-width:600px){.jx-sample{font-size:12.5px;padding-block:7px;gap:4px 10px;min-height:0}.jx-sample .jx-long{display:none}.jx-sample a{white-space:nowrap;padding:3px 8px}}
 </style>
 
 <div class="alert">Burst pipe or no heat? We answer 24/7: <a href="tel:+12505550163">250-555-0163</a></div>

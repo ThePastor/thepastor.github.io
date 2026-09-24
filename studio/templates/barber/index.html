@@ -31,7 +31,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;let
 nav.main{display:flex;align-items:center;gap:26px;font-weight:600;font-size:15px}
 nav.main a:not(.btn){text-decoration:none;color:var(--muted)}nav.main a:not(.btn):hover{color:var(--ink)}
 /* hero */
-.hero{position:relative;min-height:min(88vh,760px);display:flex;align-items:flex-end}
+.hero{position:relative;min-height:min(88vh,760px);min-height:min(88svh,760px);display:flex;align-items:flex-end}
 .hero picture,.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,9,.92) 0%,rgba(10,10,9,.6) 55%,rgba(10,10,9,.2) 100%),linear-gradient(0deg,rgba(10,10,9,.8),transparent 40%)}
 .hero .wrap{position:relative;z-index:1;width:100%;padding-block:110px 60px}
@@ -106,17 +106,31 @@ footer b{color:var(--ink)}
 }
 @media(max-width:520px){.team{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* iPhone / small-screen fixes */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:clip}
+.wrap{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.hdr{-webkit-backdrop-filter:blur(8px)}
+@media(max-width:900px){
+ .hero{min-height:0!important}
+ .hero .wrap{padding-block:72px 32px!important}
+ .actionbar{padding-left:max(8px,env(safe-area-inset-left,0px))!important;padding-right:max(8px,env(safe-area-inset-right,0px))!important}
+ body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+ footer{padding-bottom:40px!important}
+}
 </style>
 </head>
 <body>
 <div class="jx-sample" role="note">
-  <span><b>Sample website</b> by JohnsonX Studio. The business shown is fictional.</span>
+  <span><b>Sample website</b><span class="jx-long"> by JohnsonX Studio</span>. The business shown is fictional.</span>
   <a href="../../#contact">Get one like this →</a>
 </div>
 <style>
 .jx-sample{position:relative;z-index:50;display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;align-items:center;padding:9px 16px;min-height:40px;background:#14213D;color:#FFFFFF;font:500 13.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;text-align:center}
 .jx-sample b{color:#EBB64E;font-weight:600}
 .jx-sample a{color:#14213D;background:#EBB64E;text-decoration:none;padding:4px 10px;border-radius:6px;font-weight:600}
+.jx-sample{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media(max-width:600px){.jx-sample{font-size:12.5px;padding-block:7px;gap:4px 10px;min-height:0}.jx-sample .jx-long{display:none}.jx-sample a{white-space:nowrap;padding:3px 8px}}
 </style>
 
 <header class="hdr">
