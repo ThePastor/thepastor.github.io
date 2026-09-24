@@ -1,0 +1,374 @@
+<!doctype html>
+<!-- Copyright (c) 2026 Anndy Johnson, operating as JohnsonXCorp. All rights reserved. Proprietary; see ../LICENSE. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Legal — JohnsonXCorp &amp; JohnsonX Studio</title>
+<meta name="description" content="Ownership, terms of use, client terms and privacy for JohnsonXCorp and JohnsonX Studio.">
+<link rel="canonical" href="https://thepastor.github.io/legal/">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F8F7F3">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --ground:#F8F7F3; --surface:#FFFFFF; --raise:#F1EFE8; --ink:#14213D; --muted:#4A5568; --faint:#737C8C; --rule:#E2DED3;
+  --gold:#E0A93A; --gold-text:#9A6B08; --on-gold:#17120A; --btn:#1B2B4B; --btn-hover:#233861; --on-btn:#FFFFFF;
+  --live:#1E8A50; --lab:#4B57C8;
+  --shadow:0 22px 44px -28px rgba(20,33,61,.28);
+  --display:"Outfit","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+img{max-width:100%}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:17.5px;line-height:1.65;padding:0 24px;-webkit-font-smoothing:antialiased}
+.shell{max-width:1140px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+
+/* wordmark */
+.wm{font-family:var(--display);font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.wm .x{color:var(--gold-text)}
+
+/* header */
+header.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--ground) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);margin:0 -24px;padding:0 24px}
+header.bar .shell{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+header.bar .wm{font-size:19px;text-decoration:none}
+header.bar nav{display:flex;gap:26px;font-size:14.5px}
+header.bar nav a{text-decoration:none;color:var(--muted)}
+header.bar nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-weight:600;font-size:15px;text-decoration:none;border-radius:8px;padding:11px 18px;border:1px solid transparent;cursor:pointer;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--btn);color:var(--on-btn)}
+.btn.primary:hover{background:var(--btn-hover)}
+.btn.ghost{border-color:var(--rule);color:var(--ink);background:transparent}
+.btn.ghost:hover{background:var(--raise)}
+header.bar .btn{padding:8px 14px;font-size:14px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:center;padding-block:88px 72px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.eyebrow b{color:var(--gold-text);font-weight:500}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,6.2vw,72px);line-height:1.02;letter-spacing:-.035em;margin:18px 0 22px;text-wrap:balance}
+h1 .br{color:var(--gold-text);font-weight:500}
+.hero p.lede{font-size:20px;color:var(--muted);max-width:52ch;margin:0 0 30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+
+.index{background:var(--surface);border:1px solid var(--rule);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+.index .head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.04em}
+.index ol{list-style:none;margin:0;padding:6px 0}
+.index li a,.index li .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 18px;text-decoration:none}
+.index li a:hover{background:var(--raise)}
+.index .nm{font-family:var(--display);font-weight:600;font-size:17px}
+.index .cat{display:block;font-size:13px;color:var(--muted);font-family:var(--body);font-weight:400}
+.status{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;color:var(--muted)}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--live);box-shadow:0 0 0 3px color-mix(in srgb,var(--live) 22%,transparent)}
+.status.lab::before{background:var(--lab);box-shadow:0 0 0 3px color-mix(in srgb,var(--lab) 22%,transparent)}
+.index .foot{padding:12px 18px;border-top:1px solid var(--rule);font-size:13px;color:var(--faint)}
+
+/* sections */
+section.block{padding-block:72px;border-top:1px solid var(--rule)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px;margin-bottom:36px}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(30px,4vw,42px);letter-spacing:-.025em;line-height:1.1;margin:10px 0 0;text-wrap:balance}
+.sec-head p{color:var(--muted);max-width:46ch;margin:0}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:12.5px;padding:7px 13px;border-radius:999px;border:1px solid var(--rule);background:transparent;color:var(--muted);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+
+.work{display:grid;gap:28px}
+.proj{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:44px;align-items:center;background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:28px}
+.proj:nth-child(even) .shot{order:2}
+.shot{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--rule);background:var(--raise);text-decoration:none;box-shadow:var(--shadow);transition:transform .25s ease}
+.shot:hover{transform:translateY(-3px)}
+.shot .chrome{display:flex;align-items:center;gap:6px;padding:9px 12px;border-bottom:1px solid var(--rule);background:var(--raise)}
+.shot .chrome i{width:9px;height:9px;border-radius:50%;background:var(--rule);display:block}
+.shot .chrome span{margin-left:10px;font-family:var(--mono);font-size:11.5px;color:var(--faint);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.shot img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.proj .tag{font-family:var(--mono);font-size:12px;color:var(--gold-text);letter-spacing:.04em}
+.proj h3{font-family:var(--display);font-weight:700;font-size:32px;letter-spacing:-.02em;margin:8px 0 6px;line-height:1.1}
+.proj .one{font-size:18px;color:var(--ink);margin:0 0 14px;font-weight:500}
+.proj p{color:var(--muted);margin:0 0 16px;max-width:52ch}
+.proj ul{margin:0 0 20px;padding:0;list-style:none;display:grid;gap:7px}
+.proj li{padding-left:22px;position:relative;font-size:15.5px}
+.proj li::before{content:"";position:absolute;left:3px;top:.62em;width:9px;height:1.5px;background:var(--gold)}
+.facts{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 22px}
+.facts span{font-family:var(--mono);font-size:11.5px;color:var(--muted);border:1px solid var(--rule);padding:4px 9px;border-radius:6px}
+.open{display:inline-flex;align-items:center;gap:8px;font-weight:600;text-decoration:none;color:var(--ink);border-bottom:1.5px solid var(--gold);padding-bottom:2px}
+.open:hover{color:var(--gold-text)}
+
+/* lab */
+.lab-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.lab-card{border:1px dashed var(--rule);border-radius:14px;padding:26px;background:transparent}
+.lab-card .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
+.lab-card h3{font-family:var(--display);font-size:24px;font-weight:700;margin:0;letter-spacing:-.015em}
+.lab-card p{color:var(--muted);margin:0 0 14px}
+.lab-card .stack{font-family:var(--mono);font-size:12px;color:var(--faint)}
+
+/* principles */
+.prin{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--rule);border-radius:14px;overflow:hidden}
+.prin > div{padding:26px 22px;border-right:1px solid var(--rule);background:var(--surface)}
+.prin > div:last-child{border-right:0}
+.prin .k{font-family:var(--mono);font-size:12px;color:var(--gold-text);letter-spacing:.04em}
+.prin h4{font-family:var(--display);font-size:19px;font-weight:600;margin:10px 0 8px;letter-spacing:-.01em}
+.prin p{color:var(--muted);font-size:15px;margin:0}
+
+/* about/contact */
+.about{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:start}
+.about p{color:var(--muted);max-width:58ch;font-size:17.5px}
+.about p strong{color:var(--ink);font-weight:600}
+.contact{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:26px}
+.contact h3{font-family:var(--display);font-size:24px;margin:0 0 6px;font-weight:700}
+.contact p{color:var(--muted);font-size:15.5px;margin:0 0 18px}
+.line{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--rule)}
+.line .lbl{font-family:var(--mono);font-size:11.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.06em;display:block}
+.line .val{font-weight:600;overflow-wrap:anywhere;user-select:all}
+.copy{font-family:var(--mono);font-size:12px;border:1px solid var(--rule);background:transparent;color:var(--ink);border-radius:6px;padding:6px 10px;cursor:pointer;white-space:nowrap}
+.copy:hover{background:var(--raise)}
+
+footer.foot{border-top:1px solid var(--rule);padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:var(--faint);font-size:13.5px}
+footer.foot .wm{color:var(--ink);font-size:16px}
+
+@media (max-width:920px){
+  .hero{grid-template-columns:minmax(0,1fr);gap:40px;padding-block:56px 48px}
+  .proj{grid-template-columns:minmax(0,1fr);gap:24px;padding:20px}
+  .proj:nth-child(even) .shot{order:0}
+  .prin{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .prin > div:nth-child(2){border-right:0}
+  .prin > div:nth-child(-n+2){border-bottom:1px solid var(--rule)}
+  .about{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){
+  body{padding:0 16px}
+  header.bar{margin:0 -16px;padding:0 16px}
+  header.bar nav{display:none}
+  .lab-grid{grid-template-columns:minmax(0,1fr)}
+  .prin{grid-template-columns:minmax(0,1fr)}
+  .prin > div{border-right:0;border-bottom:1px solid var(--rule)}
+  .prin > div:last-child{border-bottom:0}
+  .proj h3{font-size:27px}
+  section.block{padding-block:56px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.offer .steps-mini{list-style:none;margin:0;padding:8px 0}
+.offer .steps-mini li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;padding:12px 18px;align-items:start}
+.offer .n{width:26px;height:26px;border-radius:50%;background:var(--btn);color:var(--on-btn);display:grid;place-items:center;font-family:var(--mono);font-size:12.5px;font-weight:500}
+.offer b{font-family:var(--display);font-weight:600;font-size:16.5px;display:block}
+.offer .cat{display:block;font-size:14px;color:var(--muted)}
+.tgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.tcard{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:16px;text-decoration:none;color:inherit;transition:transform .2s ease,border-color .2s ease}
+.tcard:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--gold) 55%,var(--rule))}
+.tcard .shot{box-shadow:none}
+.tcard .shot:hover{transform:none}
+.tbody{padding:16px 6px 4px}
+.tbody .tag{font-family:var(--mono);font-size:12px;color:var(--gold-text);letter-spacing:.04em}
+.tbody h3{font-family:var(--display);font-weight:700;font-size:23px;margin:6px 0 6px;letter-spacing:-.015em}
+.tbody p{color:var(--muted);margin:0 0 14px;font-size:15.5px}
+.tcard .open{margin-top:auto;align-self:flex-start}
+.proof{color:var(--muted);margin:26px 0 0;font-size:15.5px}
+.proof a{color:var(--ink);text-decoration-color:var(--gold);text-underline-offset:3px}
+.prices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:stretch}
+.price{position:relative;background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:24px 20px;display:flex;flex-direction:column}
+.price.feat{border-color:var(--btn);border-width:1.5px;box-shadow:var(--shadow)}
+.flag{position:absolute;top:-11px;left:20px;background:var(--btn);color:var(--on-btn);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+.pname{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-text)}
+.amt{font-family:var(--display);font-weight:700;font-size:38px;letter-spacing:-.02em;margin:6px 0 8px;font-variant-numeric:tabular-nums}
+.amt small{font-size:14px;font-weight:500;color:var(--muted);letter-spacing:0}
+.price p{color:var(--muted);font-size:15px;margin:0 0 14px}
+.price ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14.5px}
+.price li{padding-left:20px;position:relative}
+.price li::before{content:"";position:absolute;left:2px;top:.62em;width:9px;height:1.5px;background:var(--gold)}
+.addons{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin-top:18px;padding:16px 20px;border:1px dashed var(--rule);border-radius:12px;color:var(--muted);font-size:15px}
+.addons b{color:var(--ink);font-weight:600}
+.addons .lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:1px solid var(--rule);border-radius:14px;overflow:hidden}
+.flow li{padding:24px 20px;background:var(--surface);border-right:1px solid var(--rule);display:flex;flex-direction:column}
+.flow li:last-child{border-right:0}
+.flow .k{font-family:var(--mono);font-size:12px;color:var(--gold-text)}
+.flow h4{font-family:var(--display);font-size:19px;font-weight:600;margin:10px 0 8px}
+.flow p{color:var(--muted);font-size:15px;margin:0 0 14px}
+.flow .t{margin-top:auto;font-family:var(--mono);font-size:11.5px;color:var(--faint);letter-spacing:.04em;text-transform:uppercase}
+.prin.inc{grid-template-columns:repeat(4,minmax(0,1fr))}
+.prin.inc > div{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.prin.inc > div:nth-child(4n){border-right:0}
+.prin.inc > div:nth-child(n+5){border-bottom:0}
+.faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.faq details{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:16px 20px}
+.faq summary{cursor:pointer;font-family:var(--display);font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold-text);font-family:var(--mono)}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--muted);margin:10px 0 0;font-size:15.5px}
+.req label{display:block;font-size:13.5px;font-weight:600;margin:12px 0 5px}
+.req input,.req select,.req textarea{width:100%;font:inherit;font-size:15.5px;color:var(--ink);background:var(--ground);border:1px solid var(--rule);border-radius:8px;padding:10px 12px}
+.req input:focus,.req select:focus,.req textarea:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transparent}
+.req .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.req button{margin-top:18px;width:100%;justify-content:center;font-size:16px;padding:13px}
+.formnote{min-height:1.2em;margin:12px 0 0!important;font-size:14px;color:var(--gold-text)!important}
+header.bar .btn.primary{padding:8px 14px;font-size:14px}
+@media (max-width:1000px){.prices{grid-template-columns:repeat(2,minmax(0,1fr))}.flow{grid-template-columns:minmax(0,1fr)}.flow li{border-right:0;border-bottom:1px solid var(--rule)}.flow li:last-child{border-bottom:0}.prin.inc{grid-template-columns:repeat(2,minmax(0,1fr))}.prin.inc > div{border-right:1px solid var(--rule)!important;border-bottom:1px solid var(--rule)!important}.prin.inc > div:nth-child(2n){border-right:0!important}.prin.inc > div:nth-child(n+7){border-bottom:0!important}}
+@media (max-width:920px){.tgrid{grid-template-columns:minmax(0,1fr)}.faq{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.prices{grid-template-columns:minmax(0,1fr)}.prin.inc{grid-template-columns:minmax(0,1fr)}.prin.inc > div{border-right:0!important}.prin.inc > div:nth-child(n+7){border-bottom:1px solid var(--rule)!important}.prin.inc > div:last-child{border-bottom:0!important}.req .two{grid-template-columns:1fr}}
+
+.legal{max-width:880px}
+.lhead{padding-block:64px 24px}
+.lhead h1{font-size:clamp(36px,5vw,54px)}
+.summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:8px}
+.summary div{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:16px 18px;font-size:15.5px;color:var(--muted)}
+.summary b{color:var(--ink);display:block;margin-bottom:4px}
+.lsec{padding-block:40px;border-top:1px solid var(--rule)}
+.lsec h2{font-size:28px;margin:0 0 16px}
+.lsec h3{font-family:var(--display);font-size:19px;margin:22px 0 8px}
+.lsec p{max-width:70ch;color:var(--ink)}
+.lsec ul{padding-left:22px;margin:0 0 14px;max-width:72ch}
+.lsec li{margin:7px 0}
+.lsec a{color:var(--btn);text-underline-offset:3px}
+.notice{font-family:var(--mono);font-size:14px;background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:12px 16px;display:inline-block}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0 6px}
+.box{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:6px 20px 8px}
+.box h3{margin-top:14px}
+.tbl{overflow-x:auto;border:1px solid var(--rule);border-radius:12px;background:var(--surface);margin:8px 0 18px}
+.tbl table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.tbl th,.tbl td{text-align:left;vertical-align:top;padding:11px 14px;border-bottom:1px solid var(--rule)}
+.tbl th{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--raise)}
+.tbl tr:last-child td{border-bottom:0}
+.contactline{font-weight:600}
+@media (max-width:720px){.summary,.twocol{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="shell">
+    <a class="wm" href="../" aria-label="JohnsonXCorp home">Johnson<span class="x">[X]</span>Corp</a>
+    <nav aria-label="Main">
+      <a href="#ownership">Ownership</a>
+      <a href="#terms">Terms</a>
+      <a href="#clients">Client work</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn primary" href="../studio/">JohnsonX Studio</a>
+  </div>
+</header>
+
+<main class="shell legal" id="top">
+  <section class="lhead">
+    <div class="eyebrow"><b>[X]</b> Legal · Version 1.0 · Effective 23 September 2026</div>
+    <h1>Ownership, terms &amp; privacy</h1>
+    <p class="lede">This page covers the JohnsonXCorp website, the JohnsonX Studio web design service, and the apps linked from them. It is written in plain English. If anything here is unclear, email <a href="mailto:johnsonxcorp@outlook.com">johnsonxcorp@outlook.com</a>.</p>
+    <div class="summary">
+      <div><b>Proprietary.</b> Everything on this site belongs to its owner. All rights reserved.</div>
+      <div><b>Clients own their site</b> once it's paid for. The studio keeps its tools and templates.</div>
+      <div><b>Your details stay private.</b> They are used to reply to you, stored in Canada, and never sold.</div>
+    </div>
+  </section>
+
+  <section class="lsec" id="ownership">
+    <h2>1 · Who owns this</h2>
+    <p><strong>JohnsonXCorp</strong> is the business name of <strong>Anndy Johnson</strong>, an individual based in Kamloops, British Columbia, Canada. <strong>JohnsonX Studio</strong> is the web design service of JohnsonXCorp. In this page, "we", "us" and "JohnsonXCorp" mean Anndy Johnson, carrying on business as JohnsonXCorp and JohnsonX Studio.</p>
+    <p>Copyright in this website and everything published on it belongs to Anndy Johnson. That includes the design, layout, text, code, templates, sample sites, screenshots, graphics, icons, and the JohnsonXCorp and JohnsonX Studio names and marks. The same applies to the apps linked from this site: Read Fast, UNI Made EZ, Vamos and Syllabus Desk.</p>
+    <p class="notice">© 2026 Anndy Johnson, operating as JohnsonXCorp. All rights reserved.</p>
+    <p>These are independent projects. They are not operated, funded or endorsed by Thompson Rivers University or any other institution.</p>
+  </section>
+
+  <section class="lsec" id="rights">
+    <h2>2 · All rights reserved</h2>
+    <p>This website and the apps are <strong>proprietary</strong>. They are not open source, and no licence is granted to copy, modify, reuse, redistribute, sell or build on any part of them. Viewing a page, reading its source, or seeing it in a public GitHub repository does not give you permission to use it.</p>
+    <ul>
+      <li>You may view the site and use the apps for your own personal, non-commercial purposes.</li>
+      <li>You may share links to any page.</li>
+      <li>You may not copy the design, code, copy or templates, whether in whole or in part, or present them as your own.</li>
+      <li>You may not use the JohnsonXCorp or JohnsonX Studio names, the [X] wordmark or the hexagon-X mark to identify anyone else's work.</li>
+    </ul>
+    <p>The source code is hosted in public GitHub repositories so it can be served by GitHub Pages. GitHub's terms let other GitHub users view and fork public repositories on GitHub. That is the only right that exists: a fork is a copy on GitHub and nothing more. It carries no right to use, publish or deploy the code anywhere.</p>
+    <p>To ask for permission, email <a href="mailto:johnsonxcorp@outlook.com">johnsonxcorp@outlook.com</a>.</p>
+  </section>
+
+  <section class="lsec" id="terms">
+    <h2>3 · Using this website</h2>
+    <ul>
+      <li><strong>Information only.</strong> Prices and timelines shown are starting points. A job is confirmed only by a written agreement.</li>
+      <li><strong>Sample sites are fictional.</strong> The café, barber and plumbing templates show made-up businesses. Any resemblance to a real business is coincidence.</li>
+      <li><strong>No warranty.</strong> The site and the apps are provided "as is". We work to keep them accurate and available, but we don't promise they will be error-free or always online.</li>
+      <li><strong>Limitation of liability.</strong> To the extent the law allows, we are not liable for indirect or consequential losses arising from use of this site or the free apps.</li>
+      <li><strong>Other websites.</strong> Links to other sites and tools (Google, Stripe, booking apps) are for convenience. Those sites have their own terms.</li>
+      <li><strong>Governing law.</strong> These terms are governed by the laws of British Columbia and the federal laws of Canada that apply there.</li>
+    </ul>
+  </section>
+
+  <section class="lsec" id="clients">
+    <h2>4 · Client work (JohnsonX Studio)</h2>
+    <p>Every paid project is covered by a short written service agreement. It sets out the scope, price and timeline, and it takes priority over this summary.</p>
+    <div class="twocol">
+      <div class="box">
+        <h3>What the client owns</h3>
+        <ul>
+          <li>Their domain name, registered in their name.</li>
+          <li>Their content: text, photos, logos and information they supply.</li>
+          <li>The finished website built for them, once the final invoice is paid in full.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>What JohnsonX Studio keeps</h3>
+        <ul>
+          <li>Its templates, components, code libraries, tools and methods, which are reused across projects.</li>
+          <li>A permanent licence for the client to use those parts within their own site.</li>
+          <li>The right to show the finished site in its portfolio, unless the client asks it not to.</li>
+        </ul>
+      </div>
+    </div>
+    <h3>Payments</h3>
+    <ul>
+      <li><strong>Free mockup.</strong> A mockup costs nothing and creates no obligation. Until a project is paid for, the mockup and its design remain the property of JohnsonX Studio.</li>
+      <li><strong>Deposit.</strong> Work begins after a 50% deposit. If you cancel before work begins, the deposit is refunded in full. After work begins, it covers the work already done.</li>
+      <li><strong>Final payment</strong> is due at launch. The site goes live on your domain once it's paid.</li>
+      <li><strong>Care Plan.</strong> Billed monthly and can be cancelled at any time. Cancelling stops the next charge. Months already paid are not refunded.</li>
+      <li><strong>Card payments</strong> are processed by Stripe. Card details go directly to Stripe and are never seen or stored by us.</li>
+      <li><strong>Taxes.</strong> Prices are in Canadian dollars. GST will be added if and when JohnsonXCorp is required to charge it.</li>
+    </ul>
+  </section>
+
+  <section class="lsec" id="privacy">
+    <h2>5 · Privacy</h2>
+    <p>We follow Canada's private-sector privacy law (PIPEDA) and British Columbia's Personal Information Protection Act. In short, we collect only what we need to reply to you and do the work.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>What</th><th>Why</th><th>Where it's kept</th></tr></thead>
+      <tbody>
+        <tr><td>Mockup request form: name, business, phone, email, current website, what you need, your message</td><td>To reply to you and prepare your mockup</td><td>A private database run by Supabase, stored in Montréal, Canada. Only the owner can read it.</td></tr>
+        <tr><td>Emails, texts and calls with us</td><td>To talk about your project</td><td>Our email inbox and phone</td></tr>
+        <tr><td>Payment details</td><td>To take deposits and invoices</td><td>Stripe. We see only your name, email, amount and the last four digits of your card.</td></tr>
+        <tr><td>Standard web server logs (IP address, browser)</td><td>Needed to serve the pages</td><td>GitHub Pages, our host. Fonts come from Google Fonts, which also sees your IP address.</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li><strong>No selling, no ads.</strong> We never sell or rent your information, and we don't use advertising trackers.</li>
+      <li><strong>No marketing without consent.</strong> We contact you only about the request you sent.</li>
+      <li><strong>Retention.</strong> If we don't end up working together, we delete your request within 12 months. Client records are kept as long as tax law requires.</li>
+      <li><strong>Your rights.</strong> You can ask to see, correct or delete your information at any time by emailing <a href="mailto:johnsonxcorp@outlook.com">johnsonxcorp@outlook.com</a>. We reply within 30 days.</li>
+    </ul>
+    <p>Each app (Read Fast, UNI Made EZ, Vamos, Syllabus Desk) has its own privacy details inside the app.</p>
+  </section>
+
+  <section class="lsec" id="contact">
+    <h2>6 · Contact &amp; changes</h2>
+    <p>For questions, permission requests or privacy requests, contact Anndy Johnson, JohnsonXCorp:</p>
+    <p class="contactline"><a href="mailto:johnsonxcorp@outlook.com">johnsonxcorp@outlook.com</a> · <a href="tel:+12508795043">250-879-5043</a> · Kamloops, BC, Canada</p>
+    <p>If this page changes, the version number and date at the top will change with it.</p>
+  </section>
+
+  <footer class="foot">
+    <span><span class="wm">Johnson<span class="x">[X]</span>Corp</span> &nbsp;·&nbsp; <a href="../studio/">JohnsonX Studio</a></span>
+    <span>© 2026 Anndy Johnson, operating as JohnsonXCorp. All rights reserved.</span>
+  </footer>
+</main>
+</body>
+</html>

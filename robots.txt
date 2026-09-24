@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /studio/admin/
 Sitemap: https://thepastor.github.io/sitemap.xml
