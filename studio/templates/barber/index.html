@@ -7,38 +7,105 @@
 <meta name="description" content="A sample barbershop website template by JohnsonX Studio. The business shown is fictional.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="img/hero.webp" imagesrcset="img/hero-800.webp 800w, img/hero.webp 1600w" imagesizes="100vw" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BarberShop","name":"Fade Theory Barbers (sample)","telephone":"+1-250-555-0177","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"456 Sample Avenue","addressLocality":"Kamloops","addressRegion":"BC","addressCountry":"CA"},"openingHours":["Tu-Fr 09:00-19:00","Sa 09:00-17:00"]}</script>
 <style>
-:root{--bg:#111111;--panel:#1A1A1A;--ink:#F3F1EC;--muted:#A6A29A;--red:#E0412E;--rule:#2B2B2B;
---display:"Anton",Impact,"Arial Narrow",sans-serif;--sans:"Inter Tight",system-ui,sans-serif}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 var(--sans)}
-a{color:inherit}.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
-header{display:flex;justify-content:space-between;align-items:center;padding-block:20px;border-bottom:1px solid var(--rule)}
-.logo{font-family:var(--display);font-size:26px;letter-spacing:.04em;text-decoration:none;text-transform:uppercase}
-.logo span{color:var(--red)}
-.book{background:var(--red);color:#fff;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:4px;text-transform:uppercase;font-size:14px;letter-spacing:.06em}
-.hero{padding-block:72px 64px;display:grid;grid-template-columns:1.3fr .7fr;gap:36px;align-items:end}
-h1{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(56px,10vw,128px);line-height:.9;margin:0;letter-spacing:.01em}
-h1 em{font-style:normal;color:var(--red)}
-.hero p{color:var(--muted);font-size:18px;margin:0 0 22px}
-.stripe{height:14px;background:repeating-linear-gradient(135deg,var(--red) 0 14px,var(--ink) 14px 28px,#2350b8 28px 42px,var(--ink) 42px 56px);border-radius:2px}
-section{padding-block:64px;border-top:1px solid var(--rule)}
-h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(34px,5vw,54px);margin:0 0 28px;letter-spacing:.02em}
-.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
-.row{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:16px 0;border-bottom:1px solid var(--rule)}
-.row b{font-size:18px}.row .p{font-family:var(--display);font-size:24px;color:var(--red);font-weight:400}
-.row small{color:var(--muted);grid-column:1/-1}
+:root{--bg:#111110;--panel:#1A1A18;--panel-2:#22221F;--ink:#F3EFE7;--muted:#A9A396;--red:#E0412E;--red-2:#C8321F;--rule:#2E2D29;
+--display:"Anton",Impact,"Arial Narrow",sans-serif;--sans:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans)}
+img{max-width:100%;height:auto;display:block}a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:.95;margin:0;text-wrap:balance}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;border-radius:4px;font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:2px solid var(--red);cursor:pointer}
+.btn.red{background:var(--red);color:#fff}.btn.red:hover{background:var(--red-2);border-color:var(--red-2)}
+.btn.line{border-color:var(--ink);color:var(--ink)}.btn.line:hover{background:var(--ink);color:var(--bg)}
+.btn.sm{min-height:40px;padding:0 16px;font-size:13px}
+/* header */
+.hdr{position:sticky;top:0;z-index:40;background:rgba(17,17,16,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.hdr .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:68px}
+.logo{font-family:var(--display);font-size:26px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none}.logo span{color:var(--red)}
+nav.main{display:flex;align-items:center;gap:26px;font-weight:600;font-size:15px}
+nav.main a:not(.btn){text-decoration:none;color:var(--muted)}nav.main a:not(.btn):hover{color:var(--ink)}
+/* hero */
+.hero{position:relative;min-height:min(88vh,760px);display:flex;align-items:flex-end}
+.hero picture,.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,9,.92) 0%,rgba(10,10,9,.6) 55%,rgba(10,10,9,.2) 100%),linear-gradient(0deg,rgba(10,10,9,.8),transparent 40%)}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-block:110px 60px}
+.pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(243,239,231,.3);border-radius:999px;padding:6px 12px;font-size:14px;font-weight:600;background:rgba(17,17,16,.5)}
+.pill i{width:9px;height:9px;border-radius:50%;background:#35B26B}.pill.closed i{background:var(--red)}
+.hero h1{font-size:clamp(60px,11vw,140px);max-width:10ch}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero p{font-size:19px;color:#D9D4C9;max-width:44ch;margin:18px 0 26px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.rating{margin-top:22px;font-size:15px;color:var(--muted)}.rating b{color:var(--ink)}.rating .s{color:#F2B544;letter-spacing:2px}
+/* sections */
+section{padding-block:88px;border-top:1px solid var(--rule)}
+.kicker{font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+h2{font-size:clamp(44px,6vw,76px)}
+.sub{color:var(--muted);max-width:56ch;margin:14px 0 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+/* services */
+.svcgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.svcgroup{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:24px}
+.svcgroup h3{font-size:30px;margin-bottom:10px}
+.svc{display:grid;grid-template-columns:1fr auto;gap:2px 14px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.svc:last-child{border-bottom:0}
+.svc b{font-size:17px}.svc .p{font-family:var(--display);font-size:24px;color:var(--ink);font-variant-numeric:tabular-nums}
+.svc small{grid-column:1/-1;color:var(--muted);font-size:14.5px}
+.svc .dur{color:var(--red);font-weight:600}
+.walkin{margin-top:22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;background:var(--panel-2);border-left:4px solid var(--red);border-radius:6px;padding:18px 22px}
+/* team */
 .team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.barber{background:var(--panel);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
-.barber .pic{aspect-ratio:4/5;background:linear-gradient(160deg,#2a2a2a,#161616);display:grid;place-items:center;color:#444;font-family:var(--display);font-size:64px}
-.barber div.t{padding:14px 16px}.barber b{display:block;font-size:18px}.barber span{color:var(--muted);font-size:14px}
-.info{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.box{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:24px}
-.box div{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--rule)}.box div:last-child{border:0}
-footer{padding-block:30px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;border-top:1px solid var(--rule)}
-@media(max-width:820px){.hero,.info{grid-template-columns:1fr}.svc{grid-template-columns:1fr}.team{grid-template-columns:1fr 1fr}}
+.barber{background:var(--panel);border:1px solid var(--rule);border-radius:10px;overflow:hidden;display:grid}
+.barber img{aspect-ratio:4/5;object-fit:cover;width:100%;filter:grayscale(.15) contrast(1.05)}
+.barber .t{padding:18px 20px;display:grid;gap:6px}
+.barber h3{font-size:30px}
+.barber span{color:var(--muted);font-size:15px}
+.barber .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:6px;flex-wrap:wrap}
+/* gallery */
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.grid img{aspect-ratio:1/1;object-fit:cover;width:100%;border-radius:6px}
+.grid img.big{grid-column:span 2;grid-row:span 2;aspect-ratio:auto;height:100%}
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.rev{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:24px;display:grid;gap:10px;align-content:start}
+.rev .s{color:#F2B544;letter-spacing:2px}.rev p{margin:0;font-size:18px}.rev small{color:var(--muted)}
+.ex{justify-self:start;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border:1px solid var(--rule);border-radius:4px;padding:1px 6px}
+/* info */
+.info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.box{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:26px;display:grid;gap:12px;align-content:start}
+.box h3{font-size:32px}
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours td{padding:9px 0;border-bottom:1px solid var(--rule)}.hours td:last-child{text-align:right}
+.hours tr.today td{color:var(--red);font-weight:700}
+.box ul{margin:0;padding-left:18px;display:grid;gap:8px;color:#D9D4C9}
+.gift{margin-top:18px;background:var(--red);color:#fff;border-radius:10px;padding:32px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.gift h2{font-size:clamp(36px,5vw,56px)}
+.gift .btn{border-color:#fff;background:#fff;color:var(--red-2)}
+/* footer */
+footer{border-top:1px solid var(--rule);padding-block:44px 110px;color:var(--muted);font-size:15px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:26px}
+footer b{color:var(--ink)}
+.fine{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:14px}
+.actionbar{display:none}
+@media(max-width:900px){
+  nav.main a:not(.btn){display:none}
+  .svcgrid,.team,.revs,.info{grid-template-columns:1fr}
+  .team{grid-template-columns:1fr 1fr}
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr))}.grid img.big{grid-column:span 3;grid-row:auto;aspect-ratio:16/10}
+  footer .wrap{grid-template-columns:1fr}
+  section{padding-block:64px}
+  .actionbar{display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#0C0C0B;border-top:1px solid var(--rule);padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px))}
+  .actionbar a{min-height:52px;border-radius:6px;display:grid;place-items:center;text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule)}
+  .actionbar a.go{background:var(--red);border-color:var(--red);color:#fff}
+}
 @media(max-width:520px){.team{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -47,48 +114,168 @@ footer{padding-block:30px;color:var(--muted);font-size:14px;display:flex;flex-wr
   <a href="../../#contact">Get one like this →</a>
 </div>
 <style>
-.jx-sample{position:sticky;top:0;z-index:50;display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;align-items:center;padding:9px 16px;background:#14213D;color:#FFFFFF;font:500 13.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;text-align:center}
+.jx-sample{position:relative;z-index:50;display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;align-items:center;padding:9px 16px;min-height:40px;background:#14213D;color:#FFFFFF;font:500 13.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;text-align:center}
 .jx-sample b{color:#EBB64E;font-weight:600}
 .jx-sample a{color:#14213D;background:#EBB64E;text-decoration:none;padding:4px 10px;border-radius:6px;font-weight:600}
 </style>
 
-<div class="wrap">
-<header><a class="logo" href="#">Fade <span>Theory</span></a><a class="book" href="#book">Book a cut</a></header>
-<div class="hero">
-  <h1>Sharp cuts.<br><em>No wait.</em></h1>
-  <div><p>Fades, tapers, beard work and hot-towel shaves. Book online in thirty seconds and walk straight into the chair.</p><a class="book" href="#book">See open times →</a></div>
-</div>
-<div class="stripe" aria-hidden="true"></div>
-
-<section id="services">
-  <h2>Services</h2>
-  <div class="svc">
-    <div class="row"><b>Skin fade</b><span class="p">$38</span><small>45 min · includes line-up</small></div>
-    <div class="row"><b>Classic cut</b><span class="p">$32</span><small>30 min · scissor or clipper</small></div>
-    <div class="row"><b>Beard trim &amp; shape</b><span class="p">$22</span><small>20 min · hot towel finish</small></div>
-    <div class="row"><b>Cut + beard</b><span class="p">$52</span><small>60 min · the full service</small></div>
-    <div class="row"><b>Hot-towel shave</b><span class="p">$40</span><small>40 min · straight razor</small></div>
-    <div class="row"><b>Kids (12 &amp; under)</b><span class="p">$25</span><small>30 min</small></div>
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top">Fade<span>/</span>Theory</a>
+    <nav class="main" aria-label="Main">
+      <a href="#services">Services</a><a href="#team">Barbers</a><a href="#work">Work</a><a href="#visit">Visit</a>
+      <a class="btn red sm" href="#book">Book now</a>
+    </nav>
   </div>
-</section>
+</header>
 
-<section id="team">
-  <h2>The chairs</h2>
-  <div class="team">
-    <div class="barber"><div class="pic">1</div><div class="t"><b>Barber name</b><span>Fades · tapers</span></div></div>
-    <div class="barber"><div class="pic">2</div><div class="t"><b>Barber name</b><span>Beards · shaves</span></div></div>
-    <div class="barber"><div class="pic">3</div><div class="t"><b>Barber name</b><span>Classic cuts · kids</span></div></div>
-  </div>
-</section>
+<main id="top">
+  <section class="hero" style="padding:0;border:0">
+    <picture>
+      <source type="image/webp" srcset="img/hero-800.webp 800w, img/hero.webp 1600w" sizes="100vw">
+      <img src="img/hero.webp" alt="A barber cutting a client's hair with scissors" width="1600" height="1000" fetchpriority="high">
+    </picture>
+    <div class="wrap">
+      <div class="pillrow">
+        <span class="pill" id="status"><i></i><span>Open today · 9 am – 7 pm</span></span>
+        <span class="pill">Walk-ins welcome · book to skip the wait</span>
+      </div>
+      <h1>Sharp cuts. <em>No&nbsp;wait.</em></h1>
+      <p>Fades, tapers, beard work and hot-towel shaves in downtown Kamloops. Book online in under a minute, any time of day.</p>
+      <div class="ctas">
+        <a class="btn red" href="#book">Book now</a>
+        <a class="btn line" href="#services">See prices</a>
+      </div>
+      <div class="rating"><span class="s">★★★★★</span> <b>4.9</b> from 486 Google reviews</div>
+    </div>
+  </section>
 
-<section id="book">
-  <h2>Hours &amp; booking</h2>
-  <div class="info">
-    <div class="box"><div><span>Tue – Fri</span><b>10 am – 7 pm</b></div><div><span>Saturday</span><b>9 am – 5 pm</b></div><div><span>Sun – Mon</span><b>Closed</b></div></div>
-    <div class="box"><p style="margin:0 0 14px">Your existing booking app (Square, Fresha, Booksy) plugs in right here, so clients book without calling.</p><p style="margin:0 0 18px;color:var(--muted)">456 Sample Avenue, Kamloops, BC · 250-555-0187</p><a class="book" href="#">Book now</a></div>
+  <section id="services">
+    <div class="wrap">
+      <div class="head">
+        <div><div class="kicker">Services &amp; prices</div><h2>What we do</h2><p class="sub">Prices in CAD and include a hot-towel finish. Tip if you like it; we'll never ask.</p></div>
+        <a class="btn red" href="#book">Book a service</a>
+      </div>
+      <div class="svcgrid">
+        <div class="svcgroup"><h3>Cuts</h3>
+          <div class="svc"><b>Skin fade</b><span class="p">$42</span><small><span class="dur">45 min</span> · Bald or foil fade, scissor or clipper top</small></div>
+          <div class="svc"><b>Classic cut</b><span class="p">$36</span><small><span class="dur">30 min</span> · Taper, scissor work, neck shave</small></div>
+          <div class="svc"><b>Buzz cut</b><span class="p">$25</span><small><span class="dur">20 min</span> · One guard all over, lined up</small></div>
+          <div class="svc"><b>Long hair / restyle</b><span class="p">from $48</span><small><span class="dur">60 min</span> · Big changes and longer styles</small></div>
+        </div>
+        <div class="svcgroup"><h3>Beard &amp; shave</h3>
+          <div class="svc"><b>Beard trim &amp; line-up</b><span class="p">$24</span><small><span class="dur">20 min</span> · Shape, razor edges, beard oil</small></div>
+          <div class="svc"><b>Hot-towel shave</b><span class="p">$40</span><small><span class="dur">40 min</span> · Straight razor, two towels, balm</small></div>
+          <div class="svc"><b>Cut + beard</b><span class="p">$60</span><small><span class="dur">60 min</span> · Our most-booked combo</small></div>
+        </div>
+        <div class="svcgroup"><h3>Kids &amp; more</h3>
+          <div class="svc"><b>Kids (12 and under)</b><span class="p">$26</span><small><span class="dur">30 min</span> · Patient barbers, no rush</small></div>
+          <div class="svc"><b>Seniors (65+)</b><span class="p">$28</span><small><span class="dur">30 min</span> · Tuesday to Thursday</small></div>
+          <div class="svc"><b>Line-up only</b><span class="p">$15</span><small><span class="dur">15 min</span> · Between cuts</small></div>
+          <div class="svc"><b>Grey blending</b><span class="p">$30</span><small><span class="dur">30 min</span> · Add to any cut</small></div>
+        </div>
+      </div>
+      <div class="walkin"><div><b>Walking in?</b> <span style="color:var(--muted)">We keep one chair free for walk-ins. Book online to skip the wait.</span></div><a class="btn line sm" href="tel:+12505550177">Call 250-555-0177</a></div>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="wrap">
+      <div class="head"><div><div class="kicker">The barbers</div><h2>Pick your chair</h2></div></div>
+      <div class="team">
+        <article class="barber"><img src="img/b1.webp" alt="Barber holding a pair of scissors" width="600" height="750" loading="lazy"><div class="t"><h3>Marco</h3><span>Owner · skin fades, scissor work · 12 years</span><div class="row"><span>@marco.cuts</span><a class="btn red sm" href="#book">Book with Marco</a></div></div></article>
+        <article class="barber"><img src="img/b2.webp" alt="Smiling barber sitting in the shop" width="600" height="750" loading="lazy"><div class="t"><h3>Dev</h3><span>Tapers, curly hair, beard design · 7 years</span><div class="row"><span>@devdoeshair</span><a class="btn red sm" href="#book">Book with Dev</a></div></div></article>
+        <article class="barber"><img src="img/b3.webp" alt="Barber styling a client's hair" width="600" height="750" loading="lazy"><div class="t"><h3>Luca</h3><span>Hot-towel shaves, classic cuts · 5 years</span><div class="row"><span>@luca.shaves</span><a class="btn red sm" href="#book">Book with Luca</a></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="head"><div><div class="kicker">Recent work</div><h2>Fresh out the chair</h2></div><a class="btn line" href="#work">More on Instagram</a></div>
+      <div class="grid">
+        <img class="big" src="img/fade2.webp" alt="Skin fade with a razor line design" width="800" height="800" loading="lazy">
+        <img src="img/fade.webp" alt="Clippers blending a fade" width="800" height="800" loading="lazy">
+        <img src="img/beard.webp" alt="Beard trim on a reclined client" width="800" height="800" loading="lazy">
+        <img src="img/tools.webp" alt="Clippers, scissors and combs on the counter" width="800" height="800" loading="lazy">
+        <img src="img/shop.webp" alt="Leather barber chairs in front of a brick wall" width="800" height="800" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="wrap">
+      <div class="head"><div><div class="kicker">Reviews</div><h2>Word on the street</h2><p class="sub">Your real Google reviews show here once the site is connected. These are examples.</p></div></div>
+      <div class="revs">
+        <div class="rev"><span class="ex">Example</span><div class="s">★★★★★</div><p>"Best fade I've had in Kamloops. Booked at 11 pm, in the chair at 9 the next morning."</p><small>Google review</small></div>
+        <div class="rev"><span class="ex">Example</span><div class="s">★★★★★</div><p>"Took my son for his first real haircut. Dev was patient and made it fun."</p><small>Google review</small></div>
+        <div class="rev"><span class="ex">Example</span><div class="s">★★★★★</div><p>"The hot-towel shave is worth every dollar. Clean shop, good music."</p><small>Google review</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="wrap">
+      <div class="head"><div><div class="kicker">Visit</div><h2>Find the shop</h2></div></div>
+      <div class="info">
+        <div class="box"><h3>Hours</h3>
+          <table class="hours" id="hours">
+            <tr data-d="1"><td>Monday</td><td>Closed</td></tr>
+            <tr data-d="2"><td>Tuesday</td><td>9 am – 7 pm</td></tr>
+            <tr data-d="3"><td>Wednesday</td><td>9 am – 7 pm</td></tr>
+            <tr data-d="4"><td>Thursday</td><td>9 am – 7 pm</td></tr>
+            <tr data-d="5"><td>Friday</td><td>9 am – 7 pm</td></tr>
+            <tr data-d="6"><td>Saturday</td><td>9 am – 5 pm</td></tr>
+            <tr data-d="0"><td>Sunday</td><td>Closed</td></tr>
+          </table>
+        </div>
+        <div class="box"><h3>Location</h3>
+          <div><b>456 Sample Avenue</b><br>Kamloops, BC</div>
+          <div style="color:var(--muted)">Street parking out front, free after 6 pm. Two blocks from the Lansdowne bus stop.</div>
+          <div>250-555-0177</div>
+          <a class="btn red sm" href="https://www.google.com/maps/search/?api=1&query=Kamloops+BC" target="_blank" rel="noopener" style="justify-self:start">Get directions</a>
+        </div>
+        <div class="box" id="book"><h3>Booking</h3>
+          <ul>
+            <li>Book online 24/7: pick a service, a barber and a time.</li>
+            <li>Running late? Text us. After 10 minutes we may need to rebook.</li>
+            <li>Cancel or move your booking up to 4 hours before, free.</li>
+            <li>Reminders go out by text the day before.</li>
+          </ul>
+          <a class="btn red" href="#book" style="justify-self:start">Book now</a>
+        </div>
+      </div>
+      <div class="gift"><div><h2>Gift a fresh cut</h2><p style="margin:6px 0 0">Gift cards from $25, sent by text or email.</p></div><a class="btn" href="#book">Buy a gift card</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b style="font-family:var(--display);font-size:24px;letter-spacing:.04em;text-transform:uppercase">Fade<span style="color:var(--red)">/</span>Theory Barbers</b><br>456 Sample Avenue, Kamloops, BC<br>250-555-0177<br><span style="display:inline-flex;gap:14px;margin-top:8px"><a href="#work">Instagram</a><a href="#work">TikTok</a></span></div>
+    <div><b>Hours</b><br>Tue–Fri 9 am – 7 pm<br>Sat 9 am – 5 pm<br>Sun–Mon closed</div>
+    <div><b>More</b><br><a href="#book">Book online</a><br><a href="#book">Booking policy</a><br><a href="#visit">Gift cards</a></div>
+    <div class="fine"><span>© 2026 Fade Theory Barbers (sample)</span><span>Website by <a href="../../">JohnsonX Studio</a> · <a href="../../../legal/">Legal</a></span></div>
   </div>
-</section>
-<footer><span>© 2026 Fade Theory Barbers (sample)</span><span>Website by <a href="../../">JohnsonX Studio</a> · <a href="../../../legal/">Legal</a></span></footer>
-</div>
+</footer>
+
+<nav class="actionbar" aria-label="Quick actions">
+  <a href="tel:+12505550177">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Kamloops+BC" target="_blank" rel="noopener">Directions</a>
+  <a class="go" href="#book">Book now</a>
+</nav>
+
+<script>
+(function(){
+  var H={0:null,1:null,2:[9,19],3:[9,19],4:[9,19],5:[9,19],6:[9,17]};
+  var f=function(h){return (h%12||12)+(h<12?' am':' pm');};
+  var now=new Date(),d=now.getDay(),t=now.getHours()+now.getMinutes()/60,h=H[d];
+  var open=h&&t>=h[0]&&t<h[1], el=document.getElementById('status');
+  var next=function(){for(var i=1;i<8;i++){var n=H[(d+i)%7];if(n)return (i===1?'tomorrow':['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][(d+i)%7])+' at '+f(n[0]);}};
+  el.classList.toggle('closed',!open);
+  el.lastElementChild.textContent=open?'Open now · until '+f(h[1]):(h&&t<h[0]?'Opens today at '+f(h[0]):'Closed · opens '+next());
+  var row=document.querySelector('#hours tr[data-d="'+d+'"]');if(row)row.className='today';
+})();
+</script>
 </body>
 </html>

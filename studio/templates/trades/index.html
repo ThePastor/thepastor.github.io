@@ -4,98 +4,351 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Basalt Plumbing &amp; Heating — sample trades website · JohnsonX Studio</title>
-<meta name="description" content="A sample plumbing and trades website template by JohnsonX Studio. The business shown is fictional.">
+<meta name="description" content="A sample plumbing and heating website template by JohnsonX Studio. The business shown is fictional.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="img/hero.webp" imagesrcset="img/hero-800.webp 800w, img/hero.webp 1600w" imagesizes="(max-width: 900px) 100vw, 50vw" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Plumber","name":"Basalt Plumbing & Heating (sample)","telephone":"+1-250-555-0163","priceRange":"$$","address":{"@type":"PostalAddress","addressLocality":"Kamloops","addressRegion":"BC","addressCountry":"CA"},"areaServed":["Kamloops","Sun Peaks","Logan Lake","Chase","Savona","Barriere"],"openingHours":["Mo-Fr 07:00-18:00","Sa 08:00-14:00"]}</script>
 <style>
-:root{--bg:#F4F6F8;--paper:#fff;--ink:#0F1B2D;--muted:#51607A;--navy:#13294B;--orange:#F26B1D;--rule:#DCE2EA;
---display:"Archivo",system-ui,sans-serif;--sans:"Source Sans 3",system-ui,sans-serif}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans)}
-a{color:inherit}.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
-.top{background:var(--navy);color:#fff}
-header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px}
-.logo{font-family:var(--display);font-weight:800;font-size:22px;text-decoration:none;letter-spacing:-.01em}
-.logo small{display:block;font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
-.call{display:inline-flex;gap:8px;align-items:center;background:var(--orange);color:#fff;text-decoration:none;font-family:var(--display);font-weight:700;padding:12px 18px;border-radius:8px;white-space:nowrap}
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;padding-block:48px 72px;align-items:center}
-.badge{display:inline-block;font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
-h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,5.6vw,62px);line-height:1.04;margin:0 0 18px;letter-spacing:-.02em}
-.hero p{font-size:19px;opacity:.85;margin:0 0 26px;max-width:46ch}
-.ghost{display:inline-block;border:2px solid rgba(255,255,255,.5);color:#fff;text-decoration:none;font-family:var(--display);font-weight:700;padding:10px 18px;border-radius:8px;margin-left:8px}
-.quick{background:var(--paper);color:var(--ink);border-radius:14px;padding:24px;box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
-.quick h3{font-family:var(--display);margin:0 0 4px;font-size:20px}.quick p{color:var(--muted);font-size:15px;margin:0 0 14px;opacity:1}
-.quick label{display:block;font-size:14px;font-weight:600;margin:10px 0 4px}
-.quick input,.quick select{width:100%;padding:11px 12px;border:1px solid var(--rule);border-radius:8px;font:inherit}
-.quick button{margin-top:14px;width:100%;background:var(--navy);color:#fff;border:0;padding:13px;border-radius:8px;font-family:var(--display);font-weight:700;font-size:16px;cursor:pointer}
-.trust{display:flex;flex-wrap:wrap;gap:10px 28px;padding-block:22px;font-family:var(--display);font-weight:700;color:var(--navy)}
-.trust span::before{content:"✓ ";color:var(--orange)}
-section{padding-block:64px}
-h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,40px);margin:0 0 26px;letter-spacing:-.015em}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.svc{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:22px}
-.svc b{font-family:var(--display);font-size:19px;display:block;margin-bottom:6px}.svc p{margin:0;color:var(--muted);font-size:15.5px}
-.svc i{display:block;width:34px;height:4px;background:var(--orange);margin-bottom:14px;border-radius:2px}
-.area{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
-.chips{display:flex;flex-wrap:wrap;gap:8px}.chips span{background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:6px 12px;font-weight:600;font-size:15px}
-.ph{border:2px dashed var(--rule);border-radius:12px;padding:22px;color:var(--muted);text-align:center}
-.cta{background:var(--orange);color:#fff;border-radius:16px;padding:34px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px}
-.cta h2{margin:0;color:#fff}.cta .call{background:var(--navy)}
-footer{padding-block:30px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;border-top:1px solid var(--rule)}
-@media(max-width:860px){.hero,.area{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}}
-@media(max-width:540px){.grid{grid-template-columns:1fr}.ghost{margin:10px 0 0}header .call span{display:none}}
+:root{--navy:#0F2340;--navy-2:#16325A;--orange:#F26B1D;--orange-2:#D9570D;--ground:#F4F6F9;--white:#FFFFFF;--ink:#0F1B2D;--muted:#51607A;--rule:#DCE2EA;--ok:#1E8A50;
+--display:"Archivo",system-ui,sans-serif;--sans:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font:17.5px/1.6 var(--sans)}
+img{max-width:100%;height:auto;display:block}a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 22px;border-radius:8px;font-weight:700;font-size:17px;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:var(--sans)}
+.btn.or{background:var(--orange);color:#fff}.btn.or:hover{background:var(--orange-2)}
+.btn.nv{background:var(--navy);color:#fff}.btn.nv:hover{background:var(--navy-2)}
+.btn.out{border-color:rgba(255,255,255,.55);color:#fff}.btn.out:hover{background:rgba(255,255,255,.1)}
+.ico{width:20px;height:20px;flex:none}
+/* top bar + header */
+.alert{background:var(--orange);color:#fff;font-weight:600;font-size:15px;text-align:center;padding:7px 16px}
+.alert a{color:#fff}
+.hdr{position:sticky;top:0;z-index:40;background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
+.hdr .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:70px}
+.logo{text-decoration:none;display:grid;line-height:1.05}.logo b{font-family:var(--display);font-weight:800;font-size:21px}.logo small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#A9B8D0}
+nav.main{display:flex;align-items:center;gap:24px;font-weight:600}
+nav.main a:not(.btn){text-decoration:none;color:#D5DEEC}nav.main a:not(.btn):hover{color:#fff}
+.phone{font-family:var(--display);font-weight:800;font-size:18px}
+/* hero */
+.hero{background:var(--navy);color:#fff;padding-block:48px 64px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.emer{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:#FFB27F;font-size:15px;letter-spacing:.06em;text-transform:uppercase}
+.emer i{width:10px;height:10px;border-radius:50%;background:#35C27A;box-shadow:0 0 0 4px rgba(53,194,122,.25)}
+.hero h1{font-size:clamp(38px,5.6vw,62px);margin:14px 0 16px;font-weight:800}
+.hero p{font-size:19px;color:#D5DEEC;max-width:46ch;margin:0 0 26px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:26px;font-weight:600;color:#E8EDF5}
+.chips span{display:inline-flex;align-items:center;gap:6px}.chips svg{color:#FFB27F}
+.stars{margin-top:18px;color:#A9B8D0}.stars b{color:#fff}.stars .s{color:#FFC04D;letter-spacing:2px}
+.herofig{position:relative}
+.herofig img{border-radius:16px;aspect-ratio:4/3.3;object-fit:cover;width:100%}
+.promise{position:absolute;left:-18px;bottom:-18px;background:#fff;color:var(--ink);border-radius:12px;padding:14px 18px;box-shadow:0 18px 40px rgba(6,16,32,.35);display:grid;gap:2px;max-width:260px}
+.promise b{font-family:var(--display);font-size:22px;color:var(--orange-2)}
+/* sections */
+section{padding-block:84px}
+.eyebrow{font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-2);margin-bottom:10px}
+h2{font-size:clamp(32px,4.2vw,46px);font-weight:800}
+.sub{color:var(--muted);max-width:60ch;margin:12px 0 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+/* trust bar */
+.trust{background:#fff;border-bottom:1px solid var(--rule)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust div{padding:22px 16px;display:grid;gap:2px;border-right:1px solid var(--rule)}.trust div:last-child{border:0}
+.trust b{font-family:var(--display);font-size:24px;color:var(--navy)}.trust span{color:var(--muted);font-size:15px}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:22px;display:grid;gap:8px;align-content:start}
+.card h3{font-size:20px;display:flex;align-items:center;gap:10px}
+.card h3 svg{color:var(--orange-2);width:26px;height:26px}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.card .price{font-weight:700;color:var(--navy);font-size:15.5px}
+.card.urgent{background:var(--navy);color:#fff;border-color:var(--navy)}.card.urgent p{color:#C8D3E4}.card.urgent .price{color:#FFB27F}.card.urgent h3 svg{color:#FFB27F}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;counter-reset:s}
+.step{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:22px;position:relative}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--orange);color:#fff;font-family:var(--display);font-weight:800;margin-bottom:12px}
+.step h3{font-size:19px;margin-bottom:6px}.step p{margin:0;color:var(--muted);font-size:16px}
+/* quote */
+.quote{background:var(--navy);color:#fff}
+.quote .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:start}
+.quote h2{color:#fff}.quote .sub{color:#C8D3E4}
+.qlist{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
+.qlist li{display:flex;gap:10px;align-items:flex-start}.qlist svg{color:#FFB27F;margin-top:3px}
+form.q{background:#fff;color:var(--ink);border-radius:14px;padding:26px;display:grid;gap:14px}
+form.q .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{font-weight:700;font-size:15px;display:grid;gap:6px}
+input,select,textarea{font:inherit;font-size:17px;border:1.5px solid var(--rule);border-radius:8px;padding:12px 14px;background:#F9FAFC;color:var(--ink);width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--navy);outline:none;box-shadow:0 0 0 3px rgba(15,35,64,.15)}
+.fnote{font-size:14px;color:var(--muted);margin:0}
+.done{background:#E6F4EC;color:#135C35;border-radius:8px;padding:14px;font-weight:600}
+/* work + team */
+.work{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:14px}
+.work figure{margin:0;background:#fff;border:1px solid var(--rule);border-radius:12px;overflow:hidden}
+.work img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.work figure:first-child{grid-row:span 2}.work figure:first-child img{aspect-ratio:auto;height:calc(100% - 64px)}
+.work figcaption{padding:12px 16px;font-weight:600}.work figcaption span{display:block;color:var(--muted);font-weight:400;font-size:15px}
+.team{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
+.team img{border-radius:16px;aspect-ratio:9/8;object-fit:cover;width:100%}
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.creds div{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:12px 14px;font-size:15.5px}
+.creds b{display:block;color:var(--navy)}
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.rev{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:22px;display:grid;gap:10px;align-content:start}
+.rev .s{color:#E8A317;letter-spacing:2px}.rev p{margin:0}.rev small{color:var(--muted)}
+.ex{justify-self:start;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--rule);border-radius:4px;padding:1px 6px}
+/* area + faq */
+.area{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.towns{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.towns span{background:#fff;border:1px solid var(--rule);border-radius:999px;padding:7px 14px;font-weight:600;font-size:15.5px}
+details{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:0 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";font-size:22px;line-height:1;color:var(--orange-2)}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 16px;color:var(--muted)}
+/* cta + footer */
+.cta{background:var(--orange);color:#fff;border-radius:16px;padding:36px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.cta h2{color:#fff}.cta p{margin:6px 0 0;font-size:18px}
+footer{background:var(--navy);color:#C8D3E4;padding-block:48px 110px;font-size:15.5px}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:26px}
+footer h3{color:#fff;font-size:17px;margin-bottom:10px}footer a{color:#fff}
+.fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:14px;color:#A9B8D0}
+.actionbar{display:none}
+@media(max-width:940px){
+  nav.main a:not(.btn):not(.phone){display:none}
+  .hero .wrap,.quote .wrap,.team,.area{grid-template-columns:1fr}
+  .promise{left:12px;bottom:12px}
+  .trust .wrap{grid-template-columns:1fr 1fr}.trust div:nth-child(2){border-right:0}.trust div{border-bottom:1px solid var(--rule)}
+  .svc,.revs{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .work{grid-template-columns:1fr 1fr}.work figure:first-child{grid-column:1/-1;grid-row:auto}.work figure:first-child img{height:auto;aspect-ratio:16/10}
+  footer .wrap{grid-template-columns:1fr 1fr}
+  section{padding-block:60px}
+  .actionbar{display:grid;grid-template-columns:1.3fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--rule);padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px));box-shadow:0 -8px 24px rgba(0,0,0,.08)}
+  .actionbar a{min-height:54px;border-radius:10px;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:700;font-size:17px}
+  .actionbar a.call{background:var(--orange);color:#fff}.actionbar a.qt{background:var(--navy);color:#fff}
+}
+@media(max-width:560px){.hdr .phone span{display:none}form.q .two,.creds,.steps,footer .wrap{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.2 4.2L19 7"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5S5 10.2 5 14.5a7 7 0 0 0 14 0C19 10.2 12 2.5 12 2.5z"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c1 3.5-2.5 5-2.5 8.5A2.5 2.5 0 0 0 12 13c2 0 2.5-2 2-4 2.5 1.5 4 4.3 4 7a6 6 0 0 1-12 0C6 10 12 7.5 12 2z"/></symbol>
+  <symbol id="i-tank" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="17" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 21v1M15 21v1M9 8h6" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-pipe" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" d="M3 7h8v10h10M3 4v6M21 14v6"/></symbol>
+  <symbol id="i-bath" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 12h18v2a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5v-2zM6 12V6a2 2 0 0 1 4 0M7 19l-1 2M17 19l1 2"/></symbol>
+  <symbol id="i-gas" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M4 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16M3 21h12M14 9h2a2 2 0 0 1 2 2v6a1.5 1.5 0 0 0 3 0V8l-3-3M7 7h4"/></symbol>
+  <symbol id="i-snow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2v20M4 7l16 10M20 7L4 17"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 7h12v10H3zM15 10l6-3v10l-6-3"/></symbol>
+</svg>
+
 <div class="jx-sample" role="note">
   <span><b>Sample website</b> by JohnsonX Studio. The business shown is fictional.</span>
   <a href="../../#contact">Get one like this →</a>
 </div>
 <style>
-.jx-sample{position:sticky;top:0;z-index:50;display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;align-items:center;padding:9px 16px;background:#14213D;color:#FFFFFF;font:500 13.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;text-align:center}
+.jx-sample{position:relative;z-index:50;display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;align-items:center;padding:9px 16px;min-height:40px;background:#14213D;color:#FFFFFF;font:500 13.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;text-align:center}
 .jx-sample b{color:#EBB64E;font-weight:600}
 .jx-sample a{color:#14213D;background:#EBB64E;text-decoration:none;padding:4px 10px;border-radius:6px;font-weight:600}
 </style>
 
-<div class="top"><div class="wrap">
-<header><a class="logo" href="#">Basalt Plumbing<small>&amp; Heating</small></a><a class="call" href="#">☎ <span>250-555-0163</span></a></header>
-<div class="hero">
-  <div><div class="badge">24/7 emergency service</div>
-  <h1>Burst pipe? No heat? We're on our way.</h1>
-  <p>Licensed plumbers and gas fitters serving Kamloops and area. Upfront pricing, clean work, and a real person answers the phone.</p>
-  <a class="call" href="#">Call now</a><a class="ghost" href="#services">Our services</a></div>
-  <form class="quick" onsubmit="event.preventDefault();this.querySelector('button').textContent='Sample form: this is where the owner gets a text';">
-    <h3>Get a free quote</h3><p>We reply within one business hour.</p>
-    <label for="q-name">Name</label><input id="q-name" placeholder="Your name">
-    <label for="q-phone">Phone</label><input id="q-phone" placeholder="250-…">
-    <label for="q-job">What do you need?</label>
-    <select id="q-job"><option>Leak or burst pipe</option><option>Furnace or boiler</option><option>Hot water tank</option><option>Renovation</option><option>Something else</option></select>
-    <button type="submit">Request my quote</button>
-  </form>
-</div>
-</div></div>
+<div class="alert">Burst pipe or no heat? We answer 24/7: <a href="tel:+12505550163">250-555-0163</a></div>
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top"><b>Basalt Plumbing</b><small>&amp; Heating · Kamloops</small></a>
+    <nav class="main" aria-label="Main">
+      <a href="#services">Services</a><a href="#how">How it works</a><a href="#area">Service area</a>
+      <a class="btn or phone" href="tel:+12505550163"><svg class="ico"><use href="#i-phone"/></svg><span>250-555-0163</span></a>
+    </nav>
+  </div>
+</header>
 
-<div class="wrap">
-<div class="trust"><span>Licensed &amp; insured</span><span>Upfront pricing</span><span>Warranty on all work</span><span>Local, family-run</span></div>
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="emer"><i></i>24/7 emergency service</span>
+        <h1>Kamloops plumbing &amp; heating, fixed right the first time.</h1>
+        <p>Licensed plumbers and gas fitters for leaks, furnaces and hot water tanks. Upfront pricing, clean work, and a real person answers the phone.</p>
+        <div class="ctas">
+          <a class="btn or" href="tel:+12505550163"><svg class="ico"><use href="#i-phone"/></svg>Call 250-555-0163</a>
+          <a class="btn out" href="#quote">Get a free quote</a>
+        </div>
+        <div class="chips">
+          <span><svg class="ico"><use href="#i-check"/></svg>Licensed &amp; insured</span>
+          <span><svg class="ico"><use href="#i-check"/></svg>Free estimates</span>
+          <span><svg class="ico"><use href="#i-check"/></svg>Local since 2004</span>
+        </div>
+        <div class="stars"><span class="s">★★★★★</span> <b>4.9</b> from 258 Google reviews</div>
+      </div>
+      <div class="herofig">
+        <picture>
+          <source type="image/webp" srcset="img/hero-800.webp 800w, img/hero.webp 1600w" sizes="(max-width: 900px) 100vw, 50vw">
+          <img src="img/hero.webp" alt="A plumber fixing the drain under a kitchen sink" width="1600" height="1000" fetchpriority="high">
+        </picture>
+        <div class="promise"><b>15-minute callback</b><span>Leave a message or a quote request and we call you back within 15 minutes, 7 am to 6 pm.</span></div>
+      </div>
+    </div>
+  </section>
 
-<section id="services"><h2>What we do</h2>
-<div class="grid">
-  <div class="svc"><i></i><b>Emergency repairs</b><p>Leaks, bursts and backups, day or night.</p></div>
-  <div class="svc"><i></i><b>Furnaces &amp; boilers</b><p>Install, repair and yearly tune-ups.</p></div>
-  <div class="svc"><i></i><b>Hot water tanks</b><p>Tank and tankless, same-day swaps.</p></div>
-  <div class="svc"><i></i><b>Drain cleaning</b><p>Camera inspection and hydro-jetting.</p></div>
-  <div class="svc"><i></i><b>Renovations</b><p>Kitchens, bathrooms and basement suites.</p></div>
-  <div class="svc"><i></i><b>Gas fitting</b><p>BBQ lines, ranges and fireplaces.</p></div>
-</div></section>
+  <div class="trust">
+    <div class="wrap">
+      <div><b>20+ years</b><span>Serving the Thompson region</span></div>
+      <div><b>2-hour window</b><span>We show up when we say</span></div>
+      <div><b>1-year warranty</b><span>On all labour, in writing</span></div>
+      <div><b>$0 surprises</b><span>Price agreed before work starts</span></div>
+    </div>
+  </div>
 
-<section><div class="area">
-  <div><h2>Service area</h2><div class="chips"><span>Downtown</span><span>North Shore</span><span>Sahali</span><span>Aberdeen</span><span>Brocklehurst</span><span>Valleyview</span><span>Westsyde</span><span>Juniper Ridge</span></div></div>
-  <div class="ph">Your real Google reviews show here once the site is connected to your Business Profile.</div>
-</div></section>
+  <section id="services">
+    <div class="wrap">
+      <div class="head"><div><div class="eyebrow">Services</div><h2>What we fix and install</h2><p class="sub">Every job starts with a flat-rate price. If we can't fix it, you don't pay the service call.</p></div><a class="btn nv" href="#quote">Request a quote</a></div>
+      <div class="svc">
+        <div class="card urgent"><h3><svg><use href="#i-drop"/></svg>Emergency repairs</h3><p>Burst pipes, major leaks, backed-up drains and no-heat calls, day or night.</p><span class="price">Answered 24/7</span></div>
+        <div class="card"><h3><svg><use href="#i-flame"/></svg>Furnaces &amp; boilers</h3><p>Repairs, replacements and yearly tune-ups. We service all major brands.</p><span class="price">Tune-up from $149</span></div>
+        <div class="card"><h3><svg><use href="#i-tank"/></svg>Hot water tanks</h3><p>Tank and tankless installs, often same day. Old tank hauled away.</p><span class="price">Installed from $1,650</span></div>
+        <div class="card"><h3><svg><use href="#i-pipe"/></svg>Drain cleaning</h3><p>Kitchen, bathroom and main-line clogs cleared with the right tools.</p><span class="price">From $179</span></div>
+        <div class="card"><h3><svg><use href="#i-cam"/></svg>Camera inspection</h3><p>See exactly what's in your line before anyone digs.</p><span class="price">From $249</span></div>
+        <div class="card"><h3><svg><use href="#i-bath"/></svg>Bathroom &amp; kitchen</h3><p>Fixtures, toilets, faucets and full renovation plumbing.</p><span class="price">Free on-site estimate</span></div>
+        <div class="card"><h3><svg><use href="#i-gas"/></svg>Gas fitting</h3><p>BBQ lines, ranges, fireplaces and appliance hookups, permitted and inspected.</p><span class="price">Quoted per job</span></div>
+        <div class="card"><h3><svg><use href="#i-snow"/></svg>Winterizing</h3><p>Cabins and seasonal homes drained and protected before the freeze.</p><span class="price">From $199</span></div>
+        <div class="card"><h3><svg><use href="#i-drop"/></svg>Water treatment</h3><p>Softeners and filtration for hard Kamloops water.</p><span class="price">Free water test</span></div>
+      </div>
+    </div>
+  </section>
 
-<section><div class="cta"><h2>Need it fixed today?</h2><a class="call" href="#">☎ 250-555-0163</a></div></section>
-<footer><span>© 2026 Basalt Plumbing &amp; Heating (sample)</span><span>Website by <a href="../../">JohnsonX Studio</a> · <a href="../../../legal/">Legal</a></span></footer>
-</div>
+  <section id="how" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><div><div class="eyebrow">How it works</div><h2>Four steps, no surprises</h2></div></div>
+      <div class="steps">
+        <div class="step"><h3>Call or request a quote</h3><p>A real person answers. We ask a few questions and book a 2-hour window.</p></div>
+        <div class="step"><h3>We diagnose on site</h3><p>Your plumber explains the problem and gives a flat-rate price before starting.</p></div>
+        <div class="step"><h3>We do the work</h3><p>Floors covered, mess cleaned up, and everything tested before we leave.</p></div>
+        <div class="step"><h3>Backed for a year</h3><p>Our labour is guaranteed in writing for 12 months.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote" id="quote">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow" style="color:#FFB27F">Free quote</div>
+        <h2>Tell us what's going on</h2>
+        <p class="sub">Four quick questions. We call you back within 15 minutes during business hours.</p>
+        <ul class="qlist">
+          <li><svg class="ico"><use href="#i-check"/></svg>No obligation, no pressure</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Flat-rate price before any work</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Emergency? Skip the form and call <a href="tel:+12505550163" style="color:#fff;font-weight:700">250-555-0163</a></li>
+        </ul>
+      </div>
+      <form class="q" id="qform">
+        <div class="two">
+          <label>Your name<input id="q-name" autocomplete="name" required></label>
+          <label>Phone<input id="q-phone" type="tel" autocomplete="tel" inputmode="tel" required></label>
+        </div>
+        <label>What do you need?<select id="q-need"><option>Leak or burst pipe</option><option>No heat / furnace</option><option>Hot water tank</option><option>Drain clog</option><option>Bathroom or kitchen</option><option>Gas fitting</option><option>Something else</option></select></label>
+        <label>Details (optional)<textarea id="q-msg" rows="3" placeholder="What's happening, and where in the house?"></textarea></label>
+        <button class="btn or" type="submit">Get my free quote</button>
+        <p class="fnote">We only use your details to reply to this request.</p>
+      </form>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="head"><div><div class="eyebrow">Recent work</div><h2>Jobs around Kamloops</h2></div></div>
+      <div class="work">
+        <figure><img src="img/bath.webp" alt="A finished modern bathroom with a glass shower and vanity" width="1200" height="800" loading="lazy"><figcaption>Bathroom renovation<span>Aberdeen · shower, vanity and new lines</span></figcaption></figure>
+        <figure><img src="img/heater.webp" alt="Connecting the pipe fittings on a new water heater" width="800" height="600" loading="lazy"><figcaption>Hot water tank swap<span>North Shore · same day</span></figcaption></figure>
+        <figure><img src="img/copper.webp" alt="Copper pipe fittings sorted in bins" width="800" height="600" loading="lazy"><figcaption>Copper repipe<span>Sahali · 1970s home</span></figcaption></figure>
+        <figure><img src="img/faucet.webp" alt="A new kitchen faucet running water" width="800" height="600" loading="lazy"><figcaption>Kitchen faucet &amp; sink<span>Juniper Ridge</span></figcaption></figure>
+        <figure><img src="img/van.webp" alt="An unbranded white work van parked on a street" width="1200" height="700" loading="lazy"><figcaption>Fully stocked vans<span>Most repairs done in one visit</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" style="background:#fff">
+    <div class="wrap team">
+      <img src="img/owner.webp" alt="The owner in a blue work uniform, arms folded" width="900" height="800" loading="lazy">
+      <div>
+        <div class="eyebrow">Who you'll see</div>
+        <h2>Local, licensed and on time</h2>
+        <p class="sub">This is where the owner's story goes: how long you've worked in Kamloops, who's on the team, and why customers call back. A real photo of you and your truck builds more trust than any stock photo.</p>
+        <div class="creds">
+          <div><b>Licensed gas contractor</b>Technical Safety BC · #LGC-0000 (sample)</div>
+          <div><b>Red Seal plumbers</b>Every tech is journeyman-certified</div>
+          <div><b>WorkSafeBC covered</b>Clearance letter on request</div>
+          <div><b>$5M liability insurance</b>Certificate on request</div>
+        </div>
+        <p class="fnote" style="margin-top:14px">Financing available on furnaces and tanks over $1,000, on approved credit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="wrap">
+      <div class="head"><div><div class="eyebrow">Reviews</div><h2>What customers say</h2><p class="sub">Your real Google reviews show here once the site is connected. These are examples.</p></div></div>
+      <div class="revs">
+        <div class="rev"><span class="ex">Example</span><div class="s">★★★★★</div><p>"Called at 11 pm with water coming through the ceiling. They were here in 40 minutes."</p><small>Google review · Westsyde</small></div>
+        <div class="rev"><span class="ex">Example</span><div class="s">★★★★★</div><p>"Gave me the price before starting and it didn't change. New tank in by lunch."</p><small>Google review · Brocklehurst</small></div>
+        <div class="rev"><span class="ex">Example</span><div class="s">★★★★★</div><p>"Clean, polite and explained everything. Our furnace has never run better."</p><small>Google review · Sahali</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="area" style="padding-top:0">
+    <div class="wrap area">
+      <div>
+        <div class="eyebrow">Service area</div>
+        <h2>Where we work</h2>
+        <p class="sub">No travel charge anywhere in Kamloops. Small travel fee for outlying towns.</p>
+        <div class="towns"><span>Downtown</span><span>North Shore</span><span>Sahali</span><span>Aberdeen</span><span>Brocklehurst</span><span>Valleyview</span><span>Westsyde</span><span>Juniper Ridge</span><span>Dallas</span><span>Sun Peaks</span><span>Logan Lake</span><span>Chase</span><span>Savona</span><span>Barriere</span></div>
+      </div>
+      <div>
+        <div class="eyebrow">Questions</div>
+        <details open><summary>How much does a service call cost?</summary><p>$99, and it's credited toward the repair if you go ahead. You get a flat-rate price before any work starts.</p></details>
+        <details><summary>How fast can you get here?</summary><p>Emergencies usually within 1–2 hours in Kamloops. Regular jobs are booked in a 2-hour window, often the same or next day.</p></details>
+        <details><summary>Do you work evenings and weekends?</summary><p>Yes. Emergency calls are answered 24/7. Evening and weekend rates are shown before we book.</p></details>
+        <details><summary>Is your work guaranteed?</summary><p>All labour is guaranteed for 12 months, in writing. Parts carry the manufacturer's warranty.</p></details>
+        <details><summary>How can I pay?</summary><p>Debit, credit card or e-Transfer. Financing is available on larger installs.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="cta"><div><h2>Need it fixed today?</h2><p>A real person answers, 24/7.</p></div><a class="btn nv" href="tel:+12505550163"><svg class="ico"><use href="#i-phone"/></svg>250-555-0163</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><h3>Basalt Plumbing &amp; Heating</h3>Kamloops, BC<br>250-555-0163 · office@basalt.example<br>Licensed gas contractor #LGC-0000 (sample)</div>
+    <div><h3>Hours</h3>Mon–Fri 7 am – 6 pm<br>Sat 8 am – 2 pm<br>Emergencies 24/7</div>
+    <div><h3>Services</h3><a href="#services">Emergency repairs</a><br><a href="#services">Furnaces</a><br><a href="#services">Hot water tanks</a><br><a href="#services">Drains</a></div>
+    <div><h3>Company</h3><a href="#team">About us</a><br><a href="#area">Service area</a><br><a href="#quote">Free quote</a></div>
+    <div class="fine"><span>© 2026 Basalt Plumbing &amp; Heating (sample)</span><span>Website by <a href="../../">JohnsonX Studio</a> · <a href="../../../legal/">Legal</a></span></div>
+  </div>
+</footer>
+
+<nav class="actionbar" aria-label="Quick actions">
+  <a class="call" href="tel:+12505550163"><svg class="ico"><use href="#i-phone"/></svg>Call now</a>
+  <a class="qt" href="#quote">Free quote</a>
+</nav>
+
+<script>
+document.getElementById('qform').addEventListener('submit',function(e){e.preventDefault();
+  this.innerHTML='<div class="done">Thanks! On a real site this request goes straight to the owner\'s phone and email. This is a sample form, so nothing was sent.</div>';});
+</script>
 </body>
 </html>
