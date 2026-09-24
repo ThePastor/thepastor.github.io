@@ -87,10 +87,10 @@ input:focus,select:focus,textarea:focus{border-color:var(--navy);outline:none;bo
 .fnote{font-size:14px;color:var(--muted);margin:0}
 .done{background:#E6F4EC;color:#135C35;border-radius:8px;padding:14px;font-weight:600}
 /* work + team */
-.work{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:14px}
+.work{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .work figure{margin:0;background:#fff;border:1px solid var(--rule);border-radius:12px;overflow:hidden}
 .work img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.work figure:first-child{grid-row:span 2}.work figure:first-child img{aspect-ratio:auto;height:calc(100% - 64px)}
+
 .work figcaption{padding:12px 16px;font-weight:600}.work figcaption span{display:block;color:var(--muted);font-weight:400;font-size:15px}
 .team{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
 .team img{border-radius:16px;aspect-ratio:9/8;object-fit:cover;width:100%}
@@ -126,7 +126,7 @@ footer h3{color:#fff;font-size:17px;margin-bottom:10px}footer a{color:#fff}
   .trust .wrap{grid-template-columns:1fr 1fr}.trust .wrap>div:nth-child(2){border-right:0}.trust .wrap>div{border-bottom:1px solid var(--rule)}
   .svc,.revs{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr 1fr}
-  .work{grid-template-columns:1fr 1fr}.work figure:first-child{grid-column:1/-1;grid-row:auto}.work figure:first-child img{height:auto;aspect-ratio:16/10}
+  .work{grid-template-columns:1fr 1fr}
   footer .wrap{grid-template-columns:1fr 1fr}
   section{padding-block:60px}
   .actionbar{display:grid;grid-template-columns:1.3fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--rule);padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px));box-shadow:0 -8px 24px rgba(0,0,0,.08)}
@@ -207,7 +207,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:clip}
       <div class="herofig">
         <picture>
           <source type="image/webp" srcset="img/hero-800.webp 800w, img/hero.webp 1600w" sizes="(max-width: 900px) 100vw, 50vw">
-          <img src="img/hero.webp" alt="A plumber fixing the drain under a kitchen sink" width="1600" height="1000" fetchpriority="high">
+          <img src="img/hero.webp" alt="A plumber in overalls working on the pipes in a bathroom" width="1600" height="1000" fetchpriority="high">
         </picture>
         <div class="promise"><b>15-minute callback</b><span>Leave a message or a quote request and we call you back within 15 minutes, 7 am to 6 pm.</span></div>
       </div>
@@ -282,21 +282,20 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:clip}
       <div class="head"><div><div class="eyebrow">Recent work</div><h2>Jobs around Kamloops</h2></div></div>
       <div class="work">
         <figure><img src="img/bath.webp" alt="A finished modern bathroom with a glass shower and vanity" width="1200" height="800" loading="lazy"><figcaption>Bathroom renovation<span>Aberdeen · shower, vanity and new lines</span></figcaption></figure>
-        <figure><img src="img/heater.webp" alt="Connecting the pipe fittings on a new water heater" width="800" height="600" loading="lazy"><figcaption>Hot water tank swap<span>North Shore · same day</span></figcaption></figure>
         <figure><img src="img/copper.webp" alt="Copper pipe fittings sorted in bins" width="800" height="600" loading="lazy"><figcaption>Copper repipe<span>Sahali · 1970s home</span></figcaption></figure>
         <figure><img src="img/faucet.webp" alt="A new kitchen faucet running water" width="800" height="600" loading="lazy"><figcaption>Kitchen faucet &amp; sink<span>Juniper Ridge</span></figcaption></figure>
-        <figure><img src="img/van.webp" alt="An unbranded white work van parked on a street" width="1200" height="700" loading="lazy"><figcaption>Fully stocked vans<span>Most repairs done in one visit</span></figcaption></figure>
+        <figure><img src="img/tools.webp" alt="Hand tools organized on a workshop wall" width="800" height="600" loading="lazy"><figcaption>Fully stocked vans<span>Most repairs done in one visit</span></figcaption></figure>
       </div>
     </div>
   </section>
 
   <section id="team" style="background:#fff">
     <div class="wrap team">
-      <img src="img/owner.webp" alt="The owner in a blue work uniform, arms folded" width="900" height="800" loading="lazy">
+      <img src="img/belt.webp" alt="A worn leather tool belt with a hammer and pliers" width="900" height="800" loading="lazy">
       <div>
         <div class="eyebrow">Who you'll see</div>
         <h2>Local, licensed and on time</h2>
-        <p class="sub">This is where the owner's story goes: how long you've worked in Kamloops, who's on the team, and why customers call back. A real photo of you and your truck builds more trust than any stock photo.</p>
+        <p class="sub">This is where the owner's story goes: how long you've worked in Kamloops, who's on the team, and why customers call back. A real photo of you and your truck builds more trust than any stock photo, and it goes here in place of this one.</p>
         <div class="creds">
           <div><b>Licensed gas contractor</b>Technical Safety BC · #LGC-0000 (sample)</div>
           <div><b>Red Seal plumbers</b>Every tech is journeyman-certified</div>
@@ -351,7 +350,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:clip}
     <div><h3>Hours</h3>Mon–Fri 7 am – 6 pm<br>Sat 8 am – 2 pm<br>Emergencies 24/7</div>
     <div><h3>Services</h3><a href="#services">Emergency repairs</a><br><a href="#services">Furnaces</a><br><a href="#services">Hot water tanks</a><br><a href="#services">Drains</a></div>
     <div><h3>Company</h3><a href="#team">About us</a><br><a href="#area">Service area</a><br><a href="#quote">Free quote</a></div>
-    <div class="fine"><span>© 2026 Basalt Plumbing &amp; Heating (sample)</span><span>Website by <a href="../../">JohnsonX Studio</a> · <a href="../../../legal/">Legal</a></span></div>
+    <div class="fine"><span>© 2026 Basalt Plumbing &amp; Heating (sample)</span><span>Photos: <a href="../credits.html">Unsplash, credited</a> · Website by <a href="../../">JohnsonX Studio</a> · <a href="../../../legal/">Legal</a></span></div>
   </div>
 </footer>
 

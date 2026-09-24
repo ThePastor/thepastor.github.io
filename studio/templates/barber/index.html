@@ -68,7 +68,7 @@ h2{font-size:clamp(44px,6vw,76px)}
 .barber span{color:var(--muted);font-size:15px}
 .barber .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:6px;flex-wrap:wrap}
 /* gallery */
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
 .grid img{aspect-ratio:1/1;object-fit:cover;width:100%;border-radius:6px}
 .grid img.big{grid-column:span 2;grid-row:span 2;aspect-ratio:auto;height:100%}
 /* reviews */
@@ -97,7 +97,7 @@ footer b{color:var(--ink)}
   nav.main a:not(.btn){display:none}
   .svcgrid,.team,.revs,.info{grid-template-columns:1fr}
   .team{grid-template-columns:1fr 1fr}
-  .grid{grid-template-columns:repeat(3,minmax(0,1fr))}.grid img.big{grid-column:span 3;grid-row:auto;aspect-ratio:16/10}
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   footer .wrap{grid-template-columns:1fr}
   section{padding-block:64px}
   .actionbar{display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#0C0C0B;border-top:1px solid var(--rule);padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px))}
@@ -197,9 +197,9 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:clip}
     <div class="wrap">
       <div class="head"><div><div class="kicker">The barbers</div><h2>Pick your chair</h2></div></div>
       <div class="team">
-        <article class="barber"><img src="img/b1.webp" alt="Barber holding a pair of scissors" width="600" height="750" loading="lazy"><div class="t"><h3>Marco</h3><span>Owner · skin fades, scissor work · 12 years</span><div class="row"><span>@marco.cuts</span><a class="btn red sm" href="#book">Book with Marco</a></div></div></article>
-        <article class="barber"><img src="img/b2.webp" alt="Smiling barber sitting in the shop" width="600" height="750" loading="lazy"><div class="t"><h3>Dev</h3><span>Tapers, curly hair, beard design · 7 years</span><div class="row"><span>@devdoeshair</span><a class="btn red sm" href="#book">Book with Dev</a></div></div></article>
-        <article class="barber"><img src="img/b3.webp" alt="Barber styling a client's hair" width="600" height="750" loading="lazy"><div class="t"><h3>Luca</h3><span>Hot-towel shaves, classic cuts · 5 years</span><div class="row"><span>@luca.shaves</span><a class="btn red sm" href="#book">Book with Luca</a></div></div></article>
+        <article class="barber"><img src="img/a1.webp" alt="A barber fading the back of a client's head with clippers" width="600" height="750" loading="lazy"><div class="t"><h3>Marco</h3><span>Owner · skin fades, scissor work · 12 years</span><small style="color:var(--muted);font-size:12.5px">Stock photo. Your team photos go here.</small><div class="row"><span>@marco.cuts</span><a class="btn red sm" href="#book">Book with Marco</a></div></div></article>
+        <article class="barber"><img src="img/a2.webp" alt="Tattooed hands lining up a haircut with a straight razor" width="600" height="750" loading="lazy"><div class="t"><h3>Dev</h3><span>Tapers, curly hair, beard design · 7 years</span><div class="row"><span>@devdoeshair</span><a class="btn red sm" href="#book">Book with Dev</a></div></div></article>
+        <article class="barber"><img src="img/a3.webp" alt="Clippers tidying the neckline of a client seen from behind" width="600" height="750" loading="lazy"><div class="t"><h3>Luca</h3><span>Hot-towel shaves, classic cuts · 5 years</span><div class="row"><span>@luca.shaves</span><a class="btn red sm" href="#book">Book with Luca</a></div></div></article>
       </div>
     </div>
   </section>
@@ -208,11 +208,9 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:clip}
     <div class="wrap">
       <div class="head"><div><div class="kicker">Recent work</div><h2>Fresh out the chair</h2></div><a class="btn line" href="#work">More on Instagram</a></div>
       <div class="grid">
-        <img class="big" src="img/fade2.webp" alt="Skin fade with a razor line design" width="800" height="800" loading="lazy">
-        <img src="img/fade.webp" alt="Clippers blending a fade" width="800" height="800" loading="lazy">
-        <img src="img/beard.webp" alt="Beard trim on a reclined client" width="800" height="800" loading="lazy">
-        <img src="img/tools.webp" alt="Clippers, scissors and combs on the counter" width="800" height="800" loading="lazy">
         <img src="img/shop.webp" alt="Leather barber chairs in front of a brick wall" width="800" height="800" loading="lazy">
+        <img src="img/fade.webp" alt="Blending a fade with clippers" width="800" height="800" loading="lazy">
+        <img src="img/razor.webp" alt="A straight razor and shaving brush" width="800" height="800" loading="lazy">
       </div>
     </div>
   </section>
@@ -269,7 +267,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:clip}
     <div><b style="font-family:var(--display);font-size:24px;letter-spacing:.04em;text-transform:uppercase">Fade<span style="color:var(--red)">/</span>Theory Barbers</b><br>456 Sample Avenue, Kamloops, BC<br>250-555-0177<br><span style="display:inline-flex;gap:14px;margin-top:8px"><a href="#work">Instagram</a><a href="#work">TikTok</a></span></div>
     <div><b>Hours</b><br>Tue–Fri 9 am – 7 pm<br>Sat 9 am – 5 pm<br>Sun–Mon closed</div>
     <div><b>More</b><br><a href="#book">Book online</a><br><a href="#book">Booking policy</a><br><a href="#visit">Gift cards</a></div>
-    <div class="fine"><span>© 2026 Fade Theory Barbers (sample)</span><span>Website by <a href="../../">JohnsonX Studio</a> · <a href="../../../legal/">Legal</a></span></div>
+    <div class="fine"><span>© 2026 Fade Theory Barbers (sample)</span><span>Photos: <a href="../credits.html">Unsplash, credited</a> · Website by <a href="../../">JohnsonX Studio</a> · <a href="../../../legal/">Legal</a></span></div>
   </div>
 </footer>
 
