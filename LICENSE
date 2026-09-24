@@ -1,8 +1,9 @@
 JohnsonXCorp Website — Proprietary Licence
-Copyright (c) 2026 Anndy Johnson, operating as JohnsonXCorp. All rights reserved.
+Copyright (c) 2026 Anndy Johnson. All rights reserved.
 
-JohnsonXCorp is the business name of Anndy Johnson, Kamloops, British Columbia,
-Canada, who owns all rights in the Materials.
+Anndy Johnson, Kamloops, British Columbia, Canada, owns all rights in the Materials.
+This repository serves two separate projects he runs: JohnsonXCorp (apps and the
+main website) and JohnsonX Studio (web design, under studio/).
 
 This repository contains the source of the JohnsonXCorp website: its HTML, CSS,
 JavaScript, copy, images, icons, sample site templates (under studio/) and
@@ -11,24 +12,25 @@ brand marks, including the JohnsonXCorp and JohnsonX Studio names (the "Material
 1. No licence is granted. The Materials are published so the website can be served
    by GitHub Pages. Publication is not permission. You may not copy, modify, reuse,
    redistribute, sublicense or sell any part of the Materials, in whole or in part,
-   without prior written permission from Anndy Johnson (JohnsonXCorp).
+   without prior written permission from Anndy Johnson.
 
 2. GitHub's Terms of Service allow other GitHub users to view and fork public
    repositories on GitHub. That is the only right that exists here: a fork is a
    copy on GitHub and nothing more. It carries no right to use, publish or deploy
    the Materials anywhere.
 
-3. The JohnsonXCorp name, the Johnson[X]Corp wordmark and the hexagon-X mark
-   and the JohnsonX Studio name identify JohnsonXCorp and may not be used to identify anyone else's work.
+3. The JohnsonXCorp name, the Johnson[X]Corp wordmark, the hexagon-X mark and
+   the JohnsonX Studio name identify Anndy Johnson's projects and may not be used
+   to identify anyone else's work.
 
-4. Screenshots show JohnsonXCorp's own products: Read Fast, UNI Made EZ, Vamos and
+4. Screenshots show Anndy Johnson's own JohnsonXCorp apps: Read Fast, UNI Made EZ, Vamos and
    Syllabus Desk. Each product has its own licence in its own repository.
 
 5. Third-party material: the typefaces Outfit, Hanken Grotesk and JetBrains Mono
    are loaded from Google Fonts under the SIL Open Font License 1.1. They are not
    part of the Materials and remain under their own licence.
 
-Full terms, client terms and privacy: https://thepastor.github.io/legal/
+Full terms, Studio client terms and privacy: https://thepastor.github.io/legal/
 
 The Materials are provided "as is", without warranty of any kind.
 
