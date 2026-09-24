@@ -52,7 +52,7 @@ h2{font-size:clamp(32px,4.5vw,48px)}
 /* quick info strip */
 .strip{background:var(--forest);color:#fff}
 .strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-.strip div{padding:22px 20px;border-right:1px solid rgba(255,255,255,.15)}.strip div:last-child{border:0}
+.strip .wrap>div{padding:22px 20px;border-right:1px solid rgba(255,255,255,.15)}.strip .wrap>div:last-child{border:0}
 .strip small{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sun);font-weight:600}
 .strip a{text-decoration:none}
 /* menu */
@@ -120,7 +120,7 @@ footer a{color:#fff}
 @media(max-width:380px){nav.main .btn{display:none}}
 @media(max-width:860px){
  nav.main a:not(.btn){display:none}
- .strip .wrap{grid-template-columns:1fr}.strip div{border-right:0;border-bottom:1px solid rgba(255,255,255,.15);padding:14px 0}
+ .strip .wrap{grid-template-columns:1fr}.strip .wrap>div{border-right:0;border-bottom:1px solid rgba(255,255,255,.15);padding:14px 0}
  .feat,.items,.story,.visit,.reviews,.extras{grid-template-columns:1fr}
  .feat figure,.feat figure:only-child{grid-template-columns:110px 1fr}.feat img,.feat figure:only-child img{width:110px;min-height:110px}
  .gallery{grid-template-columns:1fr 1fr}.gallery img:first-child{grid-column:1/-1;aspect-ratio:16/10}
