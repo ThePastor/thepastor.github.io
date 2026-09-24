@@ -1,0 +1,4 @@
+
+# Private working files (never publish)
+Claude outputs/
+.DS_Store
